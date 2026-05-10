@@ -5,22 +5,18 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Collar ras	treador de mascotas} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
-\posgrado{Carrera de Especialización en Inteligencia Artificial}
-%\posgrado{Maestría en Sistemas Embebidos} 
-%\posgrado{Maestría en Internet de las cosas}
+\posgrado{Carrera de Especialización en Sistemas Embebidos}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Título y Nombre del autor}
+\autor{Joaquin Restovich}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
+\director{Esp. Ing. Gonzalo Sanchez}
+%\pertenenciaDirector{pertenencia} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
@@ -28,9 +24,9 @@
 \cliente{Nombre del cliente}
 \empresaCliente{Empresa del cliente}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{28 de abril de 2026}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{16 de junio de 2026} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{A confirmar}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -85,7 +81,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un collar rastreador de mascotas. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -100,11 +96,37 @@ Se adjunta a esta acta la planificación inicial.
 \end{tabular}
 \end{table}
 
-
-
-
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
+
+\begin{consigna1}
+El proyecto nace de la desafortunada esperiencia de que una mascota se escape o se estravie. Esta es una situación deseperante, donde no se sabe por donde comenzar la búsqueda y la deseperación que aumenta con el pasar de los minutos. De esta problemática da surge la pregunta de como puede ayudar la tecnología para estos casos. Es por esto que se propone realizar el prototipo de un collar para mascotas que cuente con un módulo GPS para geolocalizar a los animales y conectividad a la red celular para reportar su posición.
+
+Actualmente, hay competidores que ya ofrecen un producto similares pero que no logran imponerse en el mercado. Se pueden encontrar alternativas importadas de productos similares, pero ninguna de ellas esta pensada para el mercado argentino y sus necesidades. Las opciones existen que abordan esta problemática tienen 2 problemas principales que podemos identificar en las siguientes categorías:
+
+\begin{itemize}
+	\item Las que son muy costosas. Hay soluciones cuyo costo de entrada es muy elevado o que requierern una suscripcion mensual dolarizada ya que se trata de un producto sin representación en el país.
+	\item Las que depende de tecnología externa. Muchos productos constan de un collar que simplemente transporta un Airtag, dependiendo de la marca Apple tanto para su posicionamiento como para poder localizar los dispositivos.
+\end{itemize}
+
+El objetivo del proyecto es brindar una respuesta a esta problemática, ofreciendo una producto nacional, con disponibilida y soporte a un precio competitivo para el seguimiento de las mascotas. En el contexto del CESE el alcance en este proyecto contempla solo el desarrollo de un sistema embebido usando una placa de desarrollo. Se realizará el firmware necesario y la integración con los diferentes periféricos externos y un dashboard básico para interactuar con el dispositivos. El desarrollo de una placa de hardware y el desarrollo de una app mobile quedarán pendientes para siguientes etapas del proyecto. 
+
+El proyecto es de índole personal con la posibilidad de que en el futuro pueda pasar a una fase comercial si se consigue financiamiento y se logra que los costos sean realmente competitivos.
+
+El proyecto está enfocado en aquellas personas que aman a sus mascotas, las consideran parte de su familia y están dispuestos a adquirir un dispositivo para encontrarlos rapidamente en caso de que se escapen o alguien los robe. El producto debe ser accesible para que pueda llegar a una gran cantidad de usuarios, con la condición de que una vez adquirido el producto solo deberá a pagar un abono de conexión a la red celular, tal como lo haría con un teléfono celular.
+
+Uno de los principales desafíos del proyecto consiste en lograr un equilibrio adecuado entre autonomía, funcionalidad y costo. En particular, será necesario diseñar un dispositivo con suficiente duración de batería para operar durante períodos prolongado. A esto se suma la necesidad de asegurar una cobertura celular en distintos entornos. Además, el collar deberá mantener un tamaño y peso reducidos para no afectar la comodidad del animal y ofrecer resistencia al uso diario. Por último, se debe alcanzar un costo final competitivo que lo vuelva accesible para el mercado objetivo.
+
+En la figura \ref{fig:diagBloques} podemos ver los componentes principales que tendrá el sistema. Para lograr la comunicación con el usuario tendrá 2 formas, por un lado un led de status mediante el cual verá el estado del sistema y por otro lado una comunicaión de datos mediante un módulo 4G. Para la geolocalización del dispositivo se puede ver que el sistema tendrá un modulo especifico para ello. Otro módulo a destacar es la inclusion de una tarjeta SD para almacenar los datos y reportarlos luego ante un bache de conexión a la red. Por último tenemos una batería para alimentar el sistema.
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
+\caption{Diagrama en bloques del sistema.}
+\label{fig:diagBloques}
+\end{figure}
+
+\end{consigna1}
 
 \begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
@@ -129,9 +151,9 @@ Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.65\textwidth]{./Figuras/_diagBloques.png}
 \caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
+\label{fig:_diagBloques}
 \end{figure}
 
 \vspace{25px}
