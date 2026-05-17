@@ -225,48 +225,71 @@ Para el desarrollo del presente proyecto se supone que:
 \section{6. Product Backlog}
 \label{sec:backlog}
 
-El Product Backlog debe organizarse en cuatro \textbf{\textit{\'{e}picas}} fundamentales del proyecto. Cada \'{e}pica debe contener al menos dos historias de usuario que describan funcionalidades clave.
+En esta sección se presentan las épicas principales del proyecto y las historias de usuario asociadas, organizadas según los roles de cliente, responsable del proyecto y usuario final. Las historias de usuario permiten describir las funcionalidades esperadas del sistema expresando quién requiere una determinada capacidad, qué necesita y con qué propósito.
 
-El Product Backlog debe permitir interpretar cómo será el proyecto y su funcionalidad. Se deben indicar claramente las prioridades entre las historias de usuario y si hay alguna opcional.
-
-Las historias de usuario deben ser breves, claras y medibles, expresando el rol, la necesidad y el propósito de cada funcionalidad. También deben tener una prioridad definida para facilitar la planificación de los sprints.
-
-Cada historia de usuario debe incluir una ponderación en \textit{Story Points}, un número entero que representa el tama\~no relativo de la historia. El criterio para calcular los Story Points debe indicarse explícitamente.
-
-Las historias deben seguir el formato: ``\textit{Como [rol], quiero [tal cosa] para [tal otra cosa]}''.
-
-Las \'{e}picas deben estructurarse de la siguiente forma:
+Para estimar el tamaño relativo de cada historia de usuario se utilizará una ponderación en \textit{Story Points}. La estimación se realizará en función de tres aspectos: dificultad, complejidad y riesgo. Para cada uno de ellos se adoptará una escala basada en la serie de Fibonacci. En aquellos casos en que la suma de los tres componentes no coincida exactamente con un valor de la serie, se tomará el valor superior más cercano.
 
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+    \item \textbf{Dificultad}: cantidad de trabajo a realizar.
     \begin{itemize}
-      \item HU1
-      \item HU2
+        \item Baja: 1 punto.
+        \item Media: 2 puntos.
+        \item Alta: 5 puntos.
     \end{itemize}
-  \item \textbf{\'{E}pica 2}
+
+    \item \textbf{Complejidad}: complejidad técnica del trabajo a realizar.
     \begin{itemize}
-      \item HU3
-      \item HU4
+        \item Baja: 1 punto.
+        \item Media: 3 puntos.
+        \item Alta: 5 puntos.
     \end{itemize}
-  \item \textbf{\'{E}pica 3}
+
+    \item \textbf{Riesgo}: incertidumbre asociada al trabajo a realizar.
     \begin{itemize}
-      \item HU5
-      \item HU6
-    \end{itemize}
-  \item \textbf{\'{E}pica 4}
-    \begin{itemize}
-      \item HU7
-      \item HU8
+        \item Bajo: 1 punto.
+        \item Medio: 2 puntos.
+        \item Alto: 3 puntos.
     \end{itemize}
 \end{itemize}
 
-\textbf{Reglas para definir historias de usuario:}
+Los valores finales posibles de \textit{Story Points} serán: 1, 2, 3, 5, 8 y 13.
+
 \begin{itemize}
-  \item Ser concisas y claras.
-  \item Expresarlas en términos cuantificables y medibles.
-  \item No dejar margen para interpretaciones ambiguas.
-  \item Indicar claramente su prioridad y si son opcionales.
-  \item Considerar regulaciones y normas vigentes.
+    \item \textbf{Épica 1: Adquisición de ubicación de la mascota}
+    \begin{itemize}
+        \item \textbf{HU1:} Como usuario final, quiero que el collar obtenga la geolocalización de mi mascota mediante GPS para  recuperarla en caso de extravío.\\
+        Prioridad: Alta. Story Points: 8.
+
+        \item \textbf{HU2:} Como responsable del proyecto, quiero integrar un módulo GPS en el sistema para disponer de la ubicación del dispositivo para su posterior reporte.\\
+        Prioridad: Alta. Story Points: 13.
+    \end{itemize}
+
+    \item \textbf{Épica 2: Comunicación remota de la información}
+    \begin{itemize}
+        \item \textbf{HU3:} Como usuario final, quiero que el collar envíe la ubicación de la mascota a través de la red celular para poder consultarla de manera remota.\\
+        Prioridad: Alta. Story Points: 13.
+
+        \item \textbf{HU4:} Como responsable del proyecto, quiero implementar la comunicación entre el dispositivo y el sistema remoto mediante la re 4G y el protocolo MQTT para transmitir de confiable de la información al dashboard.\\
+        Prioridad: Alta. Story Points: 8.
+    \end{itemize}
+
+    \item \textbf{Épica 3: Operación autónoma y confiable del dispositivo}
+    \begin{itemize}
+        \item \textbf{HU5:} Como cliente, quiero que el prototipo tenga autonomía suficiente para validar su viabilidad como solución utilizable en condiciones reales.\\
+        Prioridad: Alta. Story Points: 8.
+
+        \item \textbf{HU6:} Como usuario final, quiero conocer el estado general del collar, incluyendo batería, su estado y su geolocalización.\\
+        Prioridad: Media. Story Points: 3.
+    \end{itemize}
+
+    \item \textbf{Épica 4: Visualización e interacción con el sistema}
+    \begin{itemize}
+        \item \textbf{HU7:} Como usuario final, quiero visualizar la última ubicación reportada del collar para encontrar a mi mascota de manera rápida y sencilla.\\
+        Prioridad: Alta. Story Points: 8.
+
+        \item \textbf{HU8:} Como cliente, quiero disponer de un dashboard con información de ubicación y estado del dispositivo para evaluar el funcionamiento integral del prototipo.\\
+        Prioridad: Media. Story Points: 5.
+    \end{itemize}
 \end{itemize}
 
 \section{7. Criterios de aceptación de historias de usuario}
