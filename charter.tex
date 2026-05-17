@@ -295,43 +295,78 @@ Los valores finales posibles de \textit{Story Points} serán: 1, 2, 3, 5, 8 y 13
 \section{7. Criterios de aceptación de historias de usuario}
 \label{sec:criteriosAceptacion}
 
-Los criterios de aceptación deben establecerse para cada historia de usuario, asegurando que se cumplan las condiciones necesarias para que la funcionalidad sea validada correctamente.
-
-Cada historia debe tener criterios medibles, específicos y verificables. Deben permitir validar que se cumple con las necesidades del usuario.
-
-Se estructuran de forma análoga a las \'{e}picas del backlog:
+En esta sección se presentarán los criterios de aceptación para cada una de las historias de usuario presentadas en la sección anterior. Estos puntos nos permitirán definir cuando puede considerarse implementada y validada cada una de ellas.
 
 \begin{itemize}
-  \item \textbf{\'{E}pica 1}
+    \item \textbf{Épica 1: Adquisición de ubicación de la mascota}
     \begin{itemize}
-      \item Criterios de aceptación HU1
-      \item Criterios de aceptación HU2
-    \end{itemize}
-  \item \textbf{\'{E}pica 2}
-    \begin{itemize}
-      \item Criterios de aceptación HU3
-      \item Criterios de aceptación HU4
-    \end{itemize}
-  \item \textbf{\'{E}pica 3}
-    \begin{itemize}
-      \item Criterios de aceptación HU5
-      \item Criterios de aceptación HU6
-    \end{itemize}
-  \item \textbf{\'{E}pica 4}
-    \begin{itemize}
-      \item Criterios de aceptación HU7
-      \item Criterios de aceptación HU8
-    \end{itemize}
-\end{itemize}
+        \item \textbf{HU1:} Como usuario final, quiero que el collar obtenga la geolocalización de mi mascota mediante GPS para recuperarla en caso de extravío.
+        \begin{itemize}
+            \item Validar la ubicación de GPS tomando como referencia otros puntos conocidos.
+            \item La posición de GPS debe tener una precisión y convergencia adecuadas para localizar el collar de manera efectiva.
+            \item Ante un fallo del módulo de GPS se debe informar de forma feaciente al usuario sobre esta situación.
+        \end{itemize}
 
-\textbf{Reglas para definir criterios de aceptación:}
-\begin{itemize}
-  \item Medibles y verificables.
-  \item Especificar cuándo una historia se considera completada.
-  \item Incluir condiciones específicas.
-  \item No ambiguos.
-  \item Probables de testear funcional o técnicamente.
-  \item Mínimo 3 criterios por HU.
+        \item \textbf{HU2:} Como responsable del proyecto, quiero integrar un módulo GPS en el sistema para disponer de la ubicación del dispositivo para su posterior reporte.
+        \begin{itemize}
+            \item El firmware debe inicializar el módulo GPS al arrancar el sistema.
+            \item El sistema debe comunicarse con el módulo GPS y ser capaz de entender las diferentes tramas de mensajeria que este entrega.
+            \item Ante pérdida de señal o mal funcionamiento del módulo GPS, el sistema debe disponer de sistemas de protección de modo de interferir con el funcionamiento del resto de funcionalidades.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Épica 2: Comunicación remota de la información}
+    \begin{itemize}
+        \item \textbf{HU3:} Como usuario final, quiero que el collar envíe la ubicación de la mascota a través de la red celular para poder consultarla de manera remota.
+        \begin{itemize}
+            \item Se debe corroborar la conexión del dispositivo a la red celular.
+            \item Se debe corroborar la conexión del dispositivo con el broker en la nube.
+            \item La información transmitida debe incluir un identificador del dispositivo, las coordenadas y la marca temporal.
+        \end{itemize}
+
+        \item \textbf{HU4:} Como responsable del proyecto, quiero implementar la comunicación entre el dispositivo y el sistema remoto mediante la red 4G y el protocolo MQTT para transmitir de forma confiable la información al dashboard.
+        \begin{itemize}
+            \item Se debe corroborar la conexión al broker MQTT.
+            \item Se debe que definir los tópicos y como se codificará la informacion.
+            \item El dispositivo debe publicar los mensajes en los tópico correspondientes.
+            \item Ante una desconexión de red o del broker, el sistema debe intentar reconectarse automáticamente.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Épica 3: Operación autónoma y confiable del dispositivo}
+    \begin{itemize}
+        \item \textbf{HU5:} Como cliente, quiero que el prototipo tenga autonomía suficiente para validar su viabilidad como solución utilizable en condiciones reales.
+        \begin{itemize}
+            \item El prototipo debe operar durante un período mínimo de autonomía definido para la prueba de campo.
+            \item El sistema debe alimentarse únicamente desde la batería prevista durante la prueba de autonomía, partiendo de un estado con 100\% de carga.
+            \item Durante la prueba no deben producirse reinicios inesperados ni pérdida total de funcionalidad.
+        \end{itemize}
+
+        \item \textbf{HU6:} Como usuario final, quiero conocer el estado general del collar, incluyendo batería, su estado y su geolocalización.
+        \begin{itemize}
+            \item El sistema debe informar el estado de batería.
+            \item El sistema debe informar el estado de módulo de GPS y su estado general.
+            \item Ante periodos de desconexión de la red 4G o del broker MQTT, se informará el tiempo de duración de dichos inconvenientes al recuperarse la conexión.
+            \item La última ubicación disponible del dispositivo debe poder consultarse junto con su estado general.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Épica 4: Visualización e interacción con el sistema}
+    \begin{itemize}
+        \item \textbf{HU7:} Como usuario final, quiero visualizar la última ubicación reportada del collar para encontrar a mi mascota de manera rápida y sencilla.
+        \begin{itemize}
+            \item El dashboard debe mostrar la última ubicación recibida del dispositivo.
+            \item La visualización debe incluir la fecha y hora del último reporte.
+            \item Si no hay datos luego de un tiempo, el dashboard debe indicar claramente que el dato no esta actualizado.
+        \end{itemize}
+
+        \item \textbf{HU8:} Como cliente, quiero disponer de un dashboard con información de ubicación y estado del dispositivo para evaluar el funcionamiento integral del prototipo.
+        \begin{itemize}
+            \item El dashboard debe mostrar al menos ubicación, estado de conectividad y nivel de batería.
+            \item El dashboard debe permitir verificar que la cadena completa de adquisición, transmisión y visualización funciona correctamente.
+            \item La información del dispositivo debe presentarse en una interfaz accesible desde navegador.
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
 
 \section{8. Fases de CRISP-DM}
