@@ -1,11 +1,11 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %codirector, % Uncomment to add a codirector to the title page
-]{charter} 
+]{charter}
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Desarrollo de un collar inteligente para mascotas basado en tecnologías de geo localización y redes celulares} 
+\titulo{Desarrollo de un collar inteligente para mascotas basado en tecnologías de geolocalización y redes celulares}
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos}
@@ -16,17 +16,17 @@
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Esp. Ing. Gonzalo Sanchez}
-%\pertenenciaDirector{pertenencia} 
+\pertenenciaDirector{FIUBA}
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Dueños de mascotas}
 \empresaCliente{Mercado objetivo}
- 
+
 \fechaINICIO{28 de abril de 2026}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{16 de junio de 2026} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{Junio 2027}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{junio de 2027}	%Fecha de defensa pública del trabajo final
 
 % Fuerza los nombres automáticos de figuras en español.
 \AtBeginDocument{%
@@ -57,24 +57,16 @@
 \centering
 \begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                & {13} de {mayo} de 2026 \\ \hline
-2      & Se completa hasta el punto 9 inclusive				   & {17} de {mayo} de 2026 \\ \hline
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & {día} de {mes} de 202X \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
-%4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
-
-% Si hay más correcciones pasada la versión 4 también se deben especificar acá
-
+0      & Creación del documento                                                             & \fechaInicioName \\ \hline
+1      & Se completa hasta el punto 5 inclusive                                             & 13 de mayo de 2026 \\ \hline
+2      & Se completa hasta el punto 9 inclusive                                             & 17 de mayo de 2026 \\ \hline
+3      & Reestructuración del documento para adecuarlo al formato de la plantilla oficial   & 17 de mayo de 2026 \\ \hline
 \end{tabularx}
 \end{table}
 
 \pagebreak
-
 
 
 \section*{Acta de constitución del proyecto}
@@ -96,57 +88,47 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 \end{tabular}
 \end{table}
 
+
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna1}
-El proyecto nace de la desafortunada experiencia de que una mascota se escape o se extravíe. Esta es una situación desesperante, en la que no se sabe por dónde comenzar la búsqueda y la desesperación aumenta con el pasar de los minutos. De esta problemática surge la pregunta de cómo puede ayudar la tecnología en estos casos. Es por esto que se propone realizar el prototipo de un collar para mascotas que cuente con un módulo GPS para geolocalizar a los animales y conectividad a la red celular para reportar su posición.
+El proyecto nace de una situación frecuente y angustiante para muchos dueños de mascotas: el extravío o escape del animal. En esos casos, la incertidumbre sobre su ubicación y la falta de herramientas accesibles para iniciar una búsqueda rápida vuelven especialmente valiosa la posibilidad de contar con asistencia tecnológica. A partir de esta problemática se propone el desarrollo de un prototipo de collar inteligente que incorpore geolocalización mediante GPS y conectividad celular para reportar su posición.
 
-Actualmente, hay competidores que ya ofrecen productos similares, pero que no logran imponerse en el mercado. Se pueden encontrar alternativas importadas de productos similares, pero ninguna de ellas está pensada para el mercado argentino y sus necesidades. Las opciones existentes que abordan esta problemática tienen 2 problemas principales, que se pueden identificar en las siguientes categorías:
+Actualmente existen productos similares en el mercado internacional, pero no logran ofrecer una propuesta del todo adecuada para el contexto local. Por un lado, hay alternativas importadas con costos iniciales altos o con suscripciones mensuales dolarizadas, como Tractive o ComfyTracker(TM). Por otro lado, también existen soluciones basadas en dispositivos auxiliares como AirTag, cuyo funcionamiento depende del ecosistema Apple tanto para la detección del dispositivo como para su posterior localización. Ninguna de estas opciones está especialmente orientada al mercado argentino, ni contempla de forma integral sus restricciones económicas y operativas.
 
-\begin{itemize}
-	\item Las que son muy costosas. Hay soluciones cuyo costo de entrada es muy elevado o que requieren una suscripción mensual dolarizada, ya que se trata de un producto sin representación en el país. Algunas opciones de este tipo pueden ser: ComfyTracker(TM) o Tractive.
-	\item Las que dependen de tecnología externa. Muchos productos constan de un collar que simplemente transporta un AirTag, dependiendo de la marca Apple tanto para su posicionamiento como para poder localizar los dispositivos.
-\end{itemize}
+El objetivo del proyecto es brindar una respuesta a esta problemática mediante una solución nacional, con disponibilidad local, soporte cercano y un costo competitivo. En el contexto del CESE, el alcance de este trabajo se concentra en el desarrollo de un prototipo funcional basado en una placa de desarrollo. El proyecto comprende el firmware necesario, la integración con periféricos externos y un dashboard básico para interactuar con el dispositivo. El desarrollo de una placa de hardware dedicada y de una aplicación móvil queda previsto para etapas posteriores.
 
-El objetivo del proyecto es brindar una respuesta a esta problemática, ofreciendo un producto nacional, con disponibilidad y soporte a un precio competitivo para el seguimiento de las mascotas. En el contexto del CESE, el alcance de este proyecto contempla solo el desarrollo de un sistema embebido usando una placa de desarrollo. Se realizará el firmware necesario, la integración con los diferentes periféricos externos y un dashboard básico para interactuar con el dispositivo. El desarrollo de una placa de hardware y el desarrollo de una app móvil quedarán pendientes para siguientes etapas del proyecto.
+Se trata de un proyecto de índole personal, con la posibilidad de evolucionar a una fase comercial futura si se obtiene financiamiento y si los costos del producto resultan competitivos para el mercado objetivo. El usuario al que apunta la solución está conformado por personas que consideran a sus mascotas parte de su familia y que están dispuestas a adquirir un dispositivo que permita encontrarlas rápidamente en caso de extravío o robo. Para que la propuesta sea atractiva, el producto debe ser accesible y sostener un esquema de uso simple, donde el único costo recurrente sea un abono de conectividad celular análogo al de un teléfono.
 
-El proyecto es de índole personal con la posibilidad de que en el futuro pueda pasar a una fase comercial si se consigue financiamiento y se logra que los costos sean realmente competitivos.
+Uno de los principales desafíos del proyecto consiste en encontrar un equilibrio adecuado entre autonomía, funcionalidad y costo. Será necesario diseñar un dispositivo con suficiente duración de batería para operar durante períodos prolongados, garantizar cobertura celular en distintos entornos y mantener un tamaño y peso reducidos para no afectar la comodidad del animal. A esto se suma la necesidad de brindar robustez frente al uso diario y de alcanzar un costo final que permita una adopción amplia.
 
-El proyecto está enfocado en aquellas personas que aman a sus mascotas, las consideran parte de su familia y están dispuestas a adquirir un dispositivo para encontrarlas rápidamente en caso de que se escapen o alguien las robe. El producto debe ser accesible para que pueda llegar a una gran cantidad de usuarios, con la condición de que, una vez adquirido, solo se deba pagar un abono de conexión a la red celular, tal como lo haría con un teléfono celular.
-
-Uno de los principales desafíos del proyecto consiste en lograr un equilibrio adecuado entre autonomía, funcionalidad y costo. En particular, será necesario diseñar un dispositivo con suficiente duración de batería para operar durante períodos prolongados. A esto se suma la necesidad de asegurar una cobertura celular en distintos entornos. Además, el collar deberá mantener un tamaño y peso reducidos para no afectar la comodidad del animal y ofrecer resistencia al uso diario. Por último, se debe alcanzar un costo final competitivo que lo vuelva accesible para el mercado objetivo.
-
-En la figura \ref{fig:diagBloques} se pueden ver los componentes principales que tendrá el sistema. Para lograr la comunicación con el usuario se tendrá 2 formas: por un lado, un LED de estado, mediante el cual verá el estado del sistema, y por otro lado, una comunicación de datos mediante un módulo 4G. Para la geolocalización del dispositivo, se puede ver que el sistema tendrá un módulo específico para ello. Otro módulo a destacar es la inclusión de una tarjeta SD para almacenar los datos y reportarlos luego ante un bache de conexión a la red. Por último, el equipo tendrá una batería para alimentar su alimentación.
+En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema propuesto. Allí se observan los principales subsistemas del prototipo: un módulo GPS para la geolocalización, un módulo 4G para la transmisión remota de datos, una tarjeta SD para almacenamiento local ante pérdidas de conectividad, un LED de estado como interfaz mínima con el usuario y una batería como fuente de alimentación del conjunto.
 
 \begin{figure}[htpb]
-\centering 
+\centering
 \includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
+\caption{Diagrama en bloques del sistema propuesto.}
 \label{fig:diagBloques}
 \end{figure}
 
-\end{consigna1}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
 \begin{table}[ht]
-%\caption{Identificación de los interesados}
-%\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Cliente       & \clientename      & \empclientename	& Usuarios objetivo \\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Usuario final & Dueños de mascotas & -              	& Usuario del sistema \\ \hline
+\rowcolor[HTML]{C0C0C0}
+Rol           & Nombre y Apellido & Organización      & Puesto                      \\ \hline
+Cliente       & \clientename      & \empclientename   & Usuarios objetivo           \\ \hline
+Responsable   & \authorname       & FIUBA             & Alumno                      \\ \hline
+Orientador    & \supname          & \pertesupname     & Director del Trabajo Final  \\ \hline
+Usuario final & Dueños de mascotas & -                & Usuario del sistema         \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -161,68 +143,91 @@ Usuario final & Dueños de mascotas & -              	& Usuario del sistema \\ \
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna3}
-Brindar una solución accesible para localizar mascotas extraviadas de manera rápida y confiable, mediante el desarrollo y validación de un prototipo con GPS y conectividad 4G que permita validar su viabilidad técnica y sentar las bases para una solución accesible al mercado local.
+Brindar una solución accesible para localizar mascotas extraviadas de manera rápida y confiable, mediante el desarrollo y validación de un prototipo con GPS y conectividad 4G que permita comprobar su viabilidad técnica y sentar las bases para una futura solución orientada al mercado local.
 
-\end{consigna3}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna4}
-
 El proyecto incluye:
 \begin{itemize}
-	\item Selección de componentes.
-		\begin{itemize}
-		\item Selección de microcontrolador.
-		\item Selección de baterías.
+	\item Selección de componentes principales del sistema.
+	\begin{itemize}
+		\item Selección de microcontrolador o plataforma de desarrollo.
+		\item Selección de batería y sistema de carga.
 		\item Selección de módulo GPS.
 		\item Selección de módulo 4G.
-		\item Selección de tarjeta SD.
-		\end{itemize}
+		\item Selección de memoria microSD.
+	\end{itemize}
 	\item Diseño de la arquitectura del firmware e integración de módulos periféricos.
-	\item Desarrollo del firmware.
-		\begin{itemize}
+	\item Desarrollo del firmware del prototipo.
+	\begin{itemize}
 		\item Módulo de control de batería.
-		\item Módulo de software GPS.
-		\item Módulo de software 4G.
-		\item Módulo de software para comunicación MQTT.
-		\item Módulo control de LED de estado.
-		\item Módulo de software para manejo de tarjeta SD.
-		\end{itemize}
-	\item Diseño del dashboard.
-	\item Selección de un broker MQTT.
-	\item Pruebas de campo.
+		\item Módulo de adquisición y procesamiento de datos GPS.
+		\item Módulo de comunicación 4G.
+		\item Módulo de comunicación MQTT.
+		\item Módulo de control del LED de estado.
+		\item Módulo de almacenamiento en tarjeta SD.
+	\end{itemize}
+	\item Diseño e implementación de un dashboard básico para visualizar el estado del dispositivo y su ubicación.
+	\item Selección y configuración de un broker MQTT.
+	\item Pruebas de integración y pruebas de campo del prototipo.
 \end{itemize}
 
-El proyecto no incluye:
+El presente proyecto no incluye:
 \begin{itemize}
 	\item Desarrollo de hardware dedicado.
-	\item Desarrollo de una aplicación mobile.
-	\item Diseño mecánico/carcasa plástica.
+	\item Desarrollo de una aplicación móvil nativa.
+	\item Diseño mecánico o carcasa plástica definitiva.
 	\item Certificación regulatoria o habilitación comercial del dispositivo.
 	\item Diseño de PCB definitivo.
 \end{itemize}
 
-\end{consigna4}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
-\begin{consigna5}
+
 Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
-	\item El proyecto tendrá una duración en torno a las 600 horas de ingeniería.
-	\item Los componentes de hardware necesarios podrán adquirirse dentro de un presupuesto de USD 500, sin restricciones de importación que eleven significativamente los costos estimados.
-	\item Se podrán adquirir los componentes de forma sencilla y las importaciones internacionales no presentarán restricciones que afecten la adquisición de los componentes en el plazo previsto.
+	\item El proyecto tendrá una duración del orden de 600 horas de ingeniería.
+	\item Los componentes de hardware necesarios podrán adquirirse dentro de un presupuesto de hasta USD 500, sin restricciones de importación que alteren significativamente los costos estimados.
+	\item La adquisición de componentes podrá realizarse en los plazos requeridos para sostener la planificación del proyecto.
 	\item Las herramientas y plataformas de desarrollo necesarias estarán disponibles y serán técnicamente compatibles entre sí.
 	\item La cobertura de red 4G en la zona de pruebas será suficiente para validar la conectividad del dispositivo.
 	\item Los módulos GPS y 4G seleccionados contarán con documentación técnica y soporte de la comunidad adecuados para el desarrollo.
 \end{itemize}
 
-\end{consigna5}
 
-\section{6. Product Backlog}
+\section{6. Requerimientos}
+\label{sec:requerimientos}
+
+\begin{enumerate}
+	\item Requerimientos funcionales:
+	\begin{enumerate}
+		\item El sistema debe adquirir periódicamente la ubicación geográfica del collar mediante un módulo GPS.
+		\item El sistema debe transmitir la ubicación y el estado general del dispositivo a través de una red celular 4G.
+		\item El sistema debe enviar la información remota utilizando MQTT como protocolo de mensajería.
+		\item El sistema debe almacenar temporalmente la información en una memoria microSD cuando no haya conectividad y reportarla una vez restablecida la comunicación.
+		\item El sistema debe informar el estado general del dispositivo mediante un LED local y mediante datos visibles en un dashboard remoto.
+		\item El sistema debe permitir visualizar la última ubicación reportada, el estado de conectividad y el nivel de batería desde una interfaz accesible por navegador.
+	\end{enumerate}
+	\item Requerimientos de diseño e integración:
+	\begin{enumerate}
+		\item El prototipo debe implementarse sobre una plataforma de desarrollo, sin requerir hardware dedicado en esta etapa.
+		\item El sistema debe integrar, como mínimo, los módulos GPS, 4G, batería, memoria microSD y una interfaz básica de estado.
+		\item El dispositivo debe mantener dimensiones y peso compatibles con el uso en una mascota, dentro de las limitaciones propias de un prototipo.
+	\end{enumerate}
+	\item Requerimientos de validación:
+	\begin{enumerate}
+		\item Se realizarán pruebas unitarias de los componentes [rincipales de firmware.
+		\item La solución debe ser validada mediante pruebas de integración y al menos una prueba de campo.
+		\item La precisión de ubicación y la transmisión remota deben contrastarse con mediciones o referencias conocidas.
+		\item La autonomía del prototipo debe resultar suficiente para ejecutar los ensayos definidos para el proyecto.
+	\end{enumerate}
+\end{enumerate}
+
+
+\section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
 En esta sección se presentan las épicas principales del proyecto y las historias de usuario asociadas, organizadas según los roles de cliente, responsable del proyecto y usuario final. Las historias de usuario permiten describir las funcionalidades esperadas del sistema expresando quién requiere una determinada capacidad, qué necesita y con qué propósito.
@@ -230,499 +235,376 @@ En esta sección se presentan las épicas principales del proyecto y las histori
 Para estimar el tamaño relativo de cada historia de usuario se utilizará una ponderación en \textit{Story Points}. La estimación se realizará en función de tres aspectos: dificultad, complejidad y riesgo. Para cada uno de ellos se adoptará una escala basada en la serie de Fibonacci. En aquellos casos en que la suma de los tres componentes no coincida exactamente con un valor de la serie, se tomará el valor superior más cercano.
 
 \begin{itemize}
-    \item \textbf{Dificultad}: cantidad de trabajo a realizar.
-    \begin{itemize}
-        \item Baja: 1 punto.
-        \item Media: 2 puntos.
-        \item Alta: 5 puntos.
-    \end{itemize}
-
-    \item \textbf{Complejidad}: complejidad técnica del trabajo a realizar.
-    \begin{itemize}
-        \item Baja: 1 punto.
-        \item Media: 3 puntos.
-        \item Alta: 5 puntos.
-    \end{itemize}
-
-    \item \textbf{Riesgo}: incertidumbre asociada al trabajo a realizar.
-    \begin{itemize}
-        \item Bajo: 1 punto.
-        \item Medio: 2 puntos.
-        \item Alto: 3 puntos.
-    \end{itemize}
+	\item \textbf{Dificultad}: baja 1 punto, media 2 puntos, alta 5 puntos.
+	\item \textbf{Complejidad}: baja 1 punto, media 3 puntos, alta 5 puntos.
+	\item \textbf{Riesgo}: bajo 1 punto, medio 2 puntos, alto 3 puntos.
 \end{itemize}
 
 Los valores finales posibles de \textit{Story Points} serán: 1, 2, 3, 5, 8 y 13.
 
 \begin{itemize}
-    \item \textbf{Épica 1: Adquisición de ubicación de la mascota}
-    \begin{itemize}
-        \item \textbf{HU1:} Como usuario final, quiero que el collar obtenga la geolocalización de mi mascota mediante GPS para  recuperarla en caso de extravío.\\
-        Prioridad: Alta. Story Points: 8.
-
-        \item \textbf{HU2:} Como responsable del proyecto, quiero integrar un módulo GPS en el sistema para disponer de la ubicación del dispositivo para su posterior reporte.\\
-        Prioridad: Alta. Story Points: 13.
-    \end{itemize}
-
-    \item \textbf{Épica 2: Comunicación remota de la información}
-    \begin{itemize}
-        \item \textbf{HU3:} Como usuario final, quiero que el collar envíe la ubicación de la mascota a través de la red celular para poder consultarla de manera remota.\\
-        Prioridad: Alta. Story Points: 13.
-
-        \item \textbf{HU4:} Como responsable del proyecto, quiero implementar la comunicación entre el dispositivo y el sistema remoto mediante la re 4G y el protocolo MQTT para transmitir de confiable de la información al dashboard.\\
-        Prioridad: Alta. Story Points: 8.
-    \end{itemize}
-
-    \item \textbf{Épica 3: Operación autónoma y confiable del dispositivo}
-    \begin{itemize}
-        \item \textbf{HU5:} Como cliente, quiero que el prototipo tenga autonomía suficiente para validar su viabilidad como solución utilizable en condiciones reales.\\
-        Prioridad: Alta. Story Points: 8.
-
-        \item \textbf{HU6:} Como usuario final, quiero conocer el estado general del collar, incluyendo batería, su estado y su geolocalización.\\
-        Prioridad: Media. Story Points: 3.
-    \end{itemize}
-
-    \item \textbf{Épica 4: Visualización e interacción con el sistema}
-    \begin{itemize}
-        \item \textbf{HU7:} Como usuario final, quiero visualizar la última ubicación reportada del collar para encontrar a mi mascota de manera rápida y sencilla.\\
-        Prioridad: Alta. Story Points: 8.
-
-        \item \textbf{HU8:} Como cliente, quiero disponer de un dashboard con información de ubicación y estado del dispositivo para evaluar el funcionamiento integral del prototipo.\\
-        Prioridad: Media. Story Points: 5.
-    \end{itemize}
+	\item \textbf{Épica 1: Adquisición de ubicación de la mascota}
+	\begin{itemize}
+		\item \textbf{HU1:} Como usuario final, quiero que el collar obtenga la geolocalización de mi mascota mediante GPS para recuperarla en caso de extravío.\\
+		Prioridad: Alta. \textit{Story Points}: 8.
+		\item \textbf{HU2:} Como responsable del proyecto, quiero integrar un módulo GPS en el sistema para disponer de la ubicación del dispositivo para su posterior reporte.\\
+		Prioridad: Alta. \textit{Story Points}: 13.
+	\end{itemize}
+	\item \textbf{Épica 2: Comunicación remota de la información}
+	\begin{itemize}
+		\item \textbf{HU3:} Como usuario final, quiero que el collar envíe la ubicación de la mascota a través de la red celular para poder consultarla de manera remota.\\
+		Prioridad: Alta. \textit{Story Points}: 13.
+		\item \textbf{HU4:} Como responsable del proyecto, quiero implementar la comunicación entre el dispositivo y el sistema remoto mediante la red 4G y el protocolo MQTT para transmitir de forma confiable la información al dashboard.\\
+		Prioridad: Alta. \textit{Story Points}: 8.
+	\end{itemize}
+	\item \textbf{Épica 3: Operación autónoma y confiable del dispositivo}
+	\begin{itemize}
+		\item \textbf{HU5:} Como cliente, quiero que el prototipo tenga autonomía suficiente para validar su viabilidad como solución utilizable en condiciones reales.\\
+		Prioridad: Alta. \textit{Story Points}: 8.
+		\item \textbf{HU6:} Como usuario final, quiero conocer el estado general del collar, incluyendo batería, estado operativo y geolocalización.\\
+		Prioridad: Media. \textit{Story Points}: 3.
+	\end{itemize}
+	\item \textbf{Épica 4: Visualización e interacción con el sistema}
+	\begin{itemize}
+		\item \textbf{HU7:} Como usuario final, quiero visualizar la última ubicación reportada del collar para encontrar a mi mascota de manera rápida y sencilla.\\
+		Prioridad: Alta. \textit{Story Points}: 8.
+		\item \textbf{HU8:} Como cliente, quiero disponer de un dashboard con información de ubicación y estado del dispositivo para evaluar el funcionamiento integral del prototipo.\\
+		Prioridad: Media. \textit{Story Points}: 5.
+	\end{itemize}
 \end{itemize}
 
-\section{7. Criterios de aceptación de historias de usuario}
-\label{sec:criteriosAceptacion}
-
-En esta sección se presentarán los criterios de aceptación para cada una de las historias de usuario presentadas en la sección anterior. Estos puntos nos permitirán definir cuando puede considerarse implementada y validada cada una de ellas.
+\subsection*{Criterios de aceptación}
 
 \begin{itemize}
-    \item \textbf{Épica 1: Adquisición de ubicación de la mascota}
-    \begin{itemize}
-        \item \textbf{HU1:} Como usuario final, quiero que el collar obtenga la geolocalización de mi mascota mediante GPS para recuperarla en caso de extravío.
-        \begin{itemize}
-            \item Validar la ubicación de GPS tomando como referencia otros puntos conocidos.
-            \item La posición de GPS debe tener una precisión y convergencia adecuadas para localizar el collar de manera efectiva.
-            \item Ante un fallo del módulo de GPS se debe informar de forma feaciente al usuario sobre esta situación.
-        \end{itemize}
-
-        \item \textbf{HU2:} Como responsable del proyecto, quiero integrar un módulo GPS en el sistema para disponer de la ubicación del dispositivo para su posterior reporte.
-        \begin{itemize}
-            \item El firmware debe inicializar el módulo GPS al arrancar el sistema.
-            \item El sistema debe comunicarse con el módulo GPS y ser capaz de entender las diferentes tramas de mensajeria que este entrega.
-            \item Ante pérdida de señal o mal funcionamiento del módulo GPS, el sistema debe disponer de sistemas de protección de modo de interferir con el funcionamiento del resto de funcionalidades.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Épica 2: Comunicación remota de la información}
-    \begin{itemize}
-        \item \textbf{HU3:} Como usuario final, quiero que el collar envíe la ubicación de la mascota a través de la red celular para poder consultarla de manera remota.
-        \begin{itemize}
-            \item Se debe corroborar la conexión del dispositivo a la red celular.
-            \item Se debe corroborar la conexión del dispositivo con el broker en la nube.
-            \item La información transmitida debe incluir un identificador del dispositivo, las coordenadas y la marca temporal.
-        \end{itemize}
-
-        \item \textbf{HU4:} Como responsable del proyecto, quiero implementar la comunicación entre el dispositivo y el sistema remoto mediante la red 4G y el protocolo MQTT para transmitir de forma confiable la información al dashboard.
-        \begin{itemize}
-            \item Se debe corroborar la conexión al broker MQTT.
-            \item Se debe que definir los tópicos y como se codificará la informacion.
-            \item El dispositivo debe publicar los mensajes en los tópico correspondientes.
-            \item Ante una desconexión de red o del broker, el sistema debe intentar reconectarse automáticamente.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Épica 3: Operación autónoma y confiable del dispositivo}
-    \begin{itemize}
-        \item \textbf{HU5:} Como cliente, quiero que el prototipo tenga autonomía suficiente para validar su viabilidad como solución utilizable en condiciones reales.
-        \begin{itemize}
-            \item El prototipo debe operar durante un período mínimo de autonomía definido para la prueba de campo.
-            \item El sistema debe alimentarse únicamente desde la batería prevista durante la prueba de autonomía, partiendo de un estado con 100\% de carga.
-            \item Durante la prueba no deben producirse reinicios inesperados ni pérdida total de funcionalidad.
-        \end{itemize}
-
-        \item \textbf{HU6:} Como usuario final, quiero conocer el estado general del collar, incluyendo batería, su estado y su geolocalización.
-        \begin{itemize}
-            \item El sistema debe informar el estado de batería.
-            \item El sistema debe informar el estado de módulo de GPS y su estado general.
-            \item Ante periodos de desconexión de la red 4G o del broker MQTT, se informará el tiempo de duración de dichos inconvenientes al recuperarse la conexión.
-            \item La última ubicación disponible del dispositivo debe poder consultarse junto con su estado general.
-        \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Épica 4: Visualización e interacción con el sistema}
-    \begin{itemize}
-        \item \textbf{HU7:} Como usuario final, quiero visualizar la última ubicación reportada del collar para encontrar a mi mascota de manera rápida y sencilla.
-        \begin{itemize}
-            \item El dashboard debe mostrar la última ubicación recibida del dispositivo.
-            \item La visualización debe incluir la fecha y hora del último reporte.
-            \item Si no hay datos luego de un tiempo, el dashboard debe indicar claramente que el dato no esta actualizado.
-        \end{itemize}
-
-        \item \textbf{HU8:} Como cliente, quiero disponer de un dashboard con información de ubicación y estado del dispositivo para evaluar el funcionamiento integral del prototipo.
-        \begin{itemize}
-            \item El dashboard debe mostrar al menos ubicación, estado de conectividad y nivel de batería.
-            \item El dashboard debe permitir verificar que la cadena completa de adquisición, transmisión y visualización funciona correctamente.
-            \item La información del dispositivo debe presentarse en una interfaz accesible desde navegador.
-        \end{itemize}
-    \end{itemize}
+	\item \textbf{HU1}
+	\begin{itemize}
+		\item Validar la ubicación de GPS tomando como referencia otros puntos conocidos.
+		\item La posición de GPS debe tener una precisión y convergencia adecuadas para localizar el collar de manera efectiva.
+		\item Ante un fallo del módulo GPS se debe informar de forma fehaciente al usuario sobre esta situación.
+	\end{itemize}
+	\item \textbf{HU2}
+	\begin{itemize}
+		\item El firmware debe inicializar el módulo GPS al arrancar el sistema.
+		\item El sistema debe comunicarse con el módulo GPS y ser capaz de interpretar las tramas entregadas por el módulo.
+		\item Ante pérdida de señal o mal funcionamiento del módulo GPS, el sistema debe proteger el resto de las funcionalidades.
+	\end{itemize}
+	\item \textbf{HU3}
+	\begin{itemize}
+		\item Se debe corroborar la conexión del dispositivo a la red celular.
+		\item Se debe corroborar la conexión del dispositivo con el broker en la nube.
+		\item La información transmitida debe incluir un identificador del dispositivo, las coordenadas y la marca temporal.
+	\end{itemize}
+	\item \textbf{HU4}
+	\begin{itemize}
+		\item Se debe corroborar la conexión al broker MQTT.
+		\item Se deben definir los tópicos y la forma de codificar la información.
+		\item El dispositivo debe publicar los mensajes en los tópicos correspondientes.
+		\item Ante una desconexión de red o del broker, el sistema debe intentar reconectarse automáticamente.
+	\end{itemize}
+	\item \textbf{HU5}
+	\begin{itemize}
+		\item El prototipo debe operar durante el período mínimo de autonomía definido para la prueba de campo.
+		\item El sistema debe alimentarse únicamente desde la batería prevista durante la prueba de autonomía, partiendo de un estado con 100\% de carga.
+		\item Durante la prueba no deben producirse reinicios inesperados ni pérdida total de funcionalidad.
+	\end{itemize}
+	\item \textbf{HU6}
+	\begin{itemize}
+		\item El sistema debe informar el estado de batería.
+		\item El sistema debe informar el estado del módulo GPS y el estado general del sistema.
+		\item Ante períodos de desconexión de la red 4G o del broker MQTT, se debe registrar e informar la situación al recuperarse la conectividad.
+		\item La última ubicación disponible del dispositivo debe poder consultarse junto con su estado general.
+	\end{itemize}
+	\item \textbf{HU7}
+	\begin{itemize}
+		\item El dashboard debe mostrar la última ubicación recibida del dispositivo.
+		\item La visualización debe incluir la fecha y hora del último reporte.
+		\item Si no hay datos luego de un tiempo definido, el dashboard debe indicar claramente que la información no está actualizada.
+	\end{itemize}
+	\item \textbf{HU8}
+	\begin{itemize}
+		\item El dashboard debe mostrar al menos ubicación, estado de conectividad y nivel de batería.
+		\item El dashboard debe permitir verificar que la cadena completa de adquisición, transmisión y visualización funciona correctamente.
+		\item La información del dispositivo debe presentarse en una interfaz accesible desde navegador.
+	\end{itemize}
 \end{itemize}
 
-\section{8. Fases de CRISP-DM}
 
-\begin{enumerate}
-  \item \textbf{Comprensión del negocio:} objetivo, valor agregado de IA, métricas de éxito.
-  \item \textbf{Comprensión de los datos:} tipo, origen, cantidad, calidad.
-  \item \textbf{Preparación de los datos:} características clave, transformaciones necesarias.
-  \item \textbf{Modelado:} tipo de problema, algoritmos posibles.
-  \item \textbf{Evaluación del modelo:} métricas de rendimiento.
-  \item \textbf{Despliegue del modelo (opcional):} tipo de despliegue y herramientas.
-\end{enumerate}
+\section{8. Entregables principales del proyecto}
+\label{sec:entregables}
+
+Los entregables principales del proyecto son:
+\begin{itemize}
+	\item Documento de selección de componentes principales del prototipo.
+	\item Diagrama en bloques de la solución.
+	\item Firmware fuente del sistema embebido.
+	\item Configuración de comunicación 4G y MQTT.
+	\item Dashboard básico para visualización de ubicación y estado del dispositivo.
+	\item Registro de pruebas de integración y pruebas de campo.
+	\item Documentación técnica del prototipo desarrollado.
+	\item Memoria del trabajo final.
+\end{itemize}
+
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-A partir de cada Historia de Usuario (HU) definida en la sección 6, descomponer el trabajo en tareas técnicas concretas, medibles y acotadas en el tiempo.
+El desglose preliminar del trabajo se organiza de la siguiente forma:
 
-\begin{itemize}
-\item Seleccionar entre 2 y 3 tareas por cada historia de usuario.
-\item Cada tarea debe estar claramente formulada, ser técnica, accionable y con una estimación horaria entre 2 y 8 horas.
-\item Evitar tareas genéricas (como ''desarrollar funcionalidad´´) o demasiado amplias.
-\item Si una tarea supera las 8 horas, debe dividirse en subtareas.
-\item Indicar la prioridad relativa de cada tarea (Alta, Media o Baja).
-\end{itemize}
+\begin{enumerate}
+\item Planificación y definición del proyecto (60 h)
+	\begin{enumerate}
+	\item Relevamiento del problema y del estado del arte (15 h)
+	\item Definición de alcance, supuestos y requerimientos (15 h)
+	\item Elaboración del backlog y criterios de aceptación (15 h)
+	\item Planificación general del proyecto y estimación de esfuerzo (15 h)
+	\end{enumerate}
+\item Selección e integración de hardware (120 h)
+	\begin{enumerate}
+	\item Selección de plataforma de desarrollo y microcontrolador (20 h)
+	\item Selección del módulo GPS (20 h)
+	\item Selección del módulo 4G y plan de datos para pruebas (20 h)
+	\item Selección de batería, sistema de carga y protecciones (20 h)
+	\item Integración física inicial de los módulos del prototipo (20 h)
+	\item Verificación eléctrica y funcional básica del conjunto (20 h)
+	\end{enumerate}
+\item Desarrollo del firmware embebido (170 h)
+	\begin{enumerate}
+	\item Arquitectura de software y definición de módulos (20 h)
+	\item Desarrollo del módulo de adquisición GPS (30 h)
+	\item Desarrollo del módulo de comunicación 4G (30 h)
+	\item Desarrollo del módulo MQTT (30 h)
+	\item Desarrollo del manejo de almacenamiento en microSD (20 h)
+	\item Desarrollo del control de batería y gestión de energía (20 h)
+	\item Desarrollo del módulo de LED de estado y diagnóstico básico (20 h)
+	\end{enumerate}
+\item Desarrollo del sistema remoto y visualización (90 h)
+	\begin{enumerate}
+	\item Selección y configuración del broker MQTT (20 h)
+	\item Definición del formato de mensajes y tópicos (15 h)
+	\item Diseño del dashboard de monitoreo (20 h)
+	\item Implementación del dashboard básico (35 h)
+	\end{enumerate}
+\item Validación del prototipo (80 h)
+	\begin{enumerate}
+	\item Pruebas unitarias e integración entre módulos (20 h)
+	\item Pruebas de conectividad celular y transmisión remota (20 h)
+	\item Pruebas de almacenamiento local ante pérdida de conectividad (20 h)
+	\item Pruebas de campo de geolocalización y autonomía (20 h)
+	\end{enumerate}
+\item Documentación y cierre (80 h)
+	\begin{enumerate}
+	\item Registro de resultados y análisis de ensayos (20 h)
+	\item Redacción de la memoria técnica (30 h)
+	\item Preparación de material de presentación y defensa (20 h)
+	\item Ajustes finales y cierre del proyecto (10 h)
+	\end{enumerate}
+\end{enumerate}
 
-\begin{table}[htpb]
+Cantidad total de horas: 600 h.
+
+
+\section{10. Diagrama de Activity On Node}
+\label{sec:AoN}
+
+En la figura \ref{fig:AoN} se muestra el diagrama preliminar de \textit{Activity on Node} correspondiente a la planificación del proyecto. El mismo resume las principales tareas y su relación de precedencia.
+
+\begin{figure}[htpb]
 \centering
-\begin{tabularx}{\linewidth}{@{}|X|X|c|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0}
-Historia de usuario & Tarea técnica & Estimación & Prioridad \\ \hline
-HU1 & Tarea 1 HU1 & 6 h & Alta \\ \hline
-HU1 & Tarea 2 HU1 & 8 h & Alta \\ \hline
-HU2 & Tarea 1 HU2 & 5 h & Media \\ \hline
-HU2 & Tarea 2 HU2 & 6 h & Alta \\ \hline
-... & ... & ... & ... \\ \hline
-\end{tabularx}
-\end{table}
-
-\textbf{Criterios para estimar tiempos:}
-\begin{itemize}
-  \item Considerar la complejidad técnica, el nivel de incertidumbre y la experiencia previa.
-  \item Evitar subestimar el esfuerzo: estimar el tiempo realista que llevaría implementar, testear y documentar cada tarea.
-  \item Basar la estimación en la experiencia propia o en referencias de tareas similares.
-\end{itemize}
-
-\textbf{Sobre la prioridad:}
-\begin{itemize}
-  \item Asignar una prioridad relativa (Alta, Media o Baja) según la relevancia funcional de la tarea y su impacto en los entregables.
-  \item Priorizar tareas que estén vinculadas a criterios de aceptación de las HU o que sean necesarias para desbloquear otras.
-  \item Incluir tareas opcionales solo si están bien justificadas.
-\end{itemize}
-
-\textbf{Recomendaciones generales:}
-\begin{itemize}
-  \item -Enfocarse en tareas que surgen directamente de las HU planteadas.
-  \item No es necesario cubrir las 600 horas del proyecto en esta sección: el foco está en el desglose de funcionalidades clave.
-  \item Este trabajo será la base para organizar algunos de los sprints y elaborar el cronograma del proyecto, por lo que debe ser claro y realista.
-\end{itemize}
-
-\section{10. Planificación de Sprints}
-
-Organizar las tareas técnicas del proyecto en sprints de trabajo que permitan distribuir de forma equilibrada la carga horaria total, estimada en 600 horas.
-
-\textbf{Consigna:}
-\begin{itemize}
-  \item Completar una tabla que relacione sprints con HU y tareas técnicas correspondientes.
-  \item Incluir estimación en horas para cada tarea.
-  \item Indicar responsable y porcentaje de avance estimado o completado.
-  \item Contemplar también tareas de planificación, documentación, redacción de memoria y preparación de defensa.
-\end{itemize}
-
-\textbf{Conceptos clave:}
-\begin{itemize}
-  \item Una \'{e}pica es una unidad funcional amplia; una historia de usuario es una funcionalidad concreta; un sprint es una unidad de tiempo donde se ejecutan tareas.
-  \item Las tareas son el nivel más desagregado: permiten estimar tiempos, asignar responsables y monitorear progreso.
-\end{itemize}
-
-\textbf{Duración sugerida:}
-\begin{itemize}
-  \item Para un proyecto de 600 h, se recomienda planificar entre 10 y 12 sprints de aproximadamente 2 semanas cada uno.
-  \item Asignar entre 45 y 50 horas efectivas por sprint a tareas técnicas.
-  \item Reservar 100 a 120 h para actividades no técnicas (planificación, escritura, reuniones, defensa).
-\end{itemize}
-
-\textbf{Importante:}
-\begin{itemize}
-  \item En proyectos individuales, el responsable suele ser el propio autor.
-  \item Aun así, desagregar tareas facilita el seguimiento y mejora continua.
-\end{itemize}
-
-\textbf{Conversión opcional de Story Points a horas:}
-\begin{itemize}
-  \item 1 SP \(\approx\) 2 h como referencia flexible.
-  \item Tener en cuenta aproximaciones tipo Fibonacci.
-\end{itemize}
-
-\begin{table}[htpb]
-\centering
-\caption{Formato sugerido}
-\begin{tabularx}{\linewidth}{@{}|l|l|X|c|l|c|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0}
-Sprint & HU o fase & Tarea & Horas / SP & Responsable & \% Completado \\ \hline
-Sprint 0 & Planificación & Definir alcance y cronograma & 10 h & Alumno & 100\% \\ \hline
-Sprint 0 & Planificación & Reunión con el tutor/cliente & 5 h & Alumno & 50\% \\ \hline
-Sprint 0 & Planificación & Ajuste de los entregables & 6 h & Alumno & 25\% \\ \hline
-Sprint 1 & HU1 & Tarea 1 HU1 & 6 h / 3 SP & Alumno & 0\% \\ \hline
-Sprint 1 & HU1 & Tarea 2 HU1 & 10 h / 5 SP & Alumno & 0\% \\ \hline
-Sprint 2 & HU2 & Tarea 1 HU2 & 7 h / 5 SP & Alumno & 0\% \\ \hline
-... & ... & ... & ... & ... & ... \\ \hline
-Sprint 5 & Escritura & Redacción memoria & 50 h / 34 SP & Alumno & 0\% \\ \hline
-Sprint 6 & Defensa & Preparación de la exposición & 20 h / 13 SP & Alumno & 0\% \\ \hline
-\end{tabularx}
-\end{table}
-
-\textbf{Recomendaciones:}
-\begin{itemize}
-  \item Verificar que la carga horaria por sprint sea equilibrada.
-  \item Usar sprints de 1 a 3 semanas, acordes al cronograma general.
-  \item Actualizar el \% completado durante el seguimiento del proyecto.
-  \item Considerar un sprint final exclusivo para pruebas, revisión y ajustes antes de la defensa.
-\end{itemize}
+\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\caption{Diagrama de \textit{Activity on Node} del proyecto.}
+\label{fig:AoN}
+\end{figure}
 
 
-\section{11. Diagrama de Gantt (sprints)}
+\section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-Visualizar en un diagrama de Gantt la planificación temporal del proyecto, tomando como base los sprints definidos en la sección anterior. Debe contemplar todas las horas del proyecto.
+En la figura \ref{fig:diagGantt} se presenta el diagrama de Gantt preliminar del proyecto. Este cronograma resume la distribución temporal de las actividades principales y deberá mantenerse consistente con la fecha de finalización indicada en el acta constitutiva.
 
-Consigna:
-
-\begin{itemize}
-
-\item Elaborar un diagrama de Gantt que muestre la secuencia temporal de los sprints.
-
-\item Cada fila debe representar un sprint (con su número o nombre), y el eje horizontal debe indicar el tiempo (en semanas o fechas concretas).
-
-\item Las tareas técnicas derivadas de HU deben diferenciarse visualmente (por ejemplo, con un color distinto) de las tareas no técnicas (planificación, redacción, defensa).
-
-\item Incluir todas las tareas estimadas en cada sprint.
-\end{itemize}
-
-Recomendaciones para el Gantt:
-
-\begin{itemize}
-
-	\item Podés usar herramientas gratuitas como TeamGantt, ClickUp, GanttProject, [Google Sheets], [Trello + Planyway], entre otras.
-	\item Ordená los sprints de forma cronológica, comenzando con Sprint 0 (planificación) y finalizando con el sprint de defensa.
-	\item Asegurate de reflejar la duración realista de cada sprint según tu disponibilidad y el cronograma general del posgrado.
-	\item Incluí hitos importantes: reuniones, entregas parciales, defensa.
-\end{itemize}
+\begin{landscape}
+\begin{figure}[htpb]
+\centering
+\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
+\caption{Diagrama de Gantt preliminar del proyecto.}
+\label{fig:diagGantt}
+\end{figure}
+\end{landscape}
 
 
-Incluir una imagen legible del diagrama de Gantt. Si es muy ancho, presentar primero la tabla y luego el gráfico de barras.
+\section{12. Presupuesto detallado del proyecto}
+\label{sec:presupuesto}
 
+El presupuesto preliminar del proyecto se expresa en dólares estadounidenses (USD).
 
-
-\section{12. Gobernanza de datos}
-\label{sec:gobernanza}
-
-En esta sección se debe analizar de manera integral el marco normativo y ético asociado al uso de los datos y al desarrollo de soluciones basadas en inteligencia artificial.
-
-El análisis se divide en dos partes:
-
-\begin{itemize}
-  \item Cumplimiento normativo.
-  \item Ética en el uso de inteligencia artificial.
-\end{itemize}
-
-\subsection{Cumplimiento normativo}
-Este análisis es clave para garantizar el cumplimiento normativo y evitar conflictos legales durante el desarrollo y publicación del proyecto.
-
-En esta subsección se debe identificar si los datos utilizados en el proyecto están sujetos a normativas de protección de datos y privacidad, y en qué condiciones pueden emplearse.
-
-Aspectos a considerar:
-
-\begin{itemize}
-  \item Determinar si los datos están regulados por normativas como el GDPR, la Ley 25.326 de Protección de Datos Personales (Argentina), la HIPAA u otras, según la jurisdicción o la temática del proyecto.
-  \item Aclarar si las fuentes de datos son propias, de acceso público o licenciadas. En este último caso, explicitar la licencia correspondiente y sus condiciones de uso. Realizar este mismo análisis para las herramientas y, en caso de corresponder, para los modelos preentrenados a emplear.
-  \item Analizar la viabilidad legal del proyecto, considerando los mecanismos necesarios para garantizar el cumplimiento normativo y la trazabilidad de los datos.
-\end{itemize}
-
-\subsection{Ética en el uso de inteligencia artificial}
-
-En esta subsección se debe reflexionar sobre los aspectos éticos vinculados al uso de datos y algoritmos de inteligencia artificial. Se espera una evaluación de la integridad del sistema y su impacto social.
-
-Aspectos a considerar:
-
-\begin{itemize}
-	\item Identificar posibles sesgos en los datos o modelos (ideológicos, culturales, de género, geográficos, etc.) y analizar sus consecuencias (por ejemplo: discriminación, manipulación, pérdida de privacidad o desinformación).
-	\item Analizar los posibles riesgos en términos de impacto social del uso indebido de la solución a desarrollar.
-	\item En caso de corresponder, proponer medidas de mitigación y mecanismos de confianza (auditorías, documentación, trazabilidad, revisión humana, etc.).
-	\item Finalmente, elaborar una reflexión general sobre la ética del proyecto, considerando tanto la equidad y transparencia del sistema como su impacto potencial en la sociedad.
-
-\end{itemize}
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0}
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0}
+Descripción &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+Plataforma de desarrollo embebida &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 70} &
+  \multicolumn{1}{c|}{USD 70} \\ \hline
+Módulo GPS &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 35} &
+  \multicolumn{1}{c|}{USD 35} \\ \hline
+Módulo 4G &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 110} &
+  \multicolumn{1}{c|}{USD 110} \\ \hline
+Memoria microSD y adaptadores &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 15} &
+  \multicolumn{1}{c|}{USD 15} \\ \hline
+Batería, cargador y protecciones &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 60} &
+  \multicolumn{1}{c|}{USD 60} \\ \hline
+Materiales de prototipado, cableado y conectores &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 80} &
+  \multicolumn{1}{c|}{USD 80} \\ \hline
+SIM y conectividad para pruebas &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 60} &
+  \multicolumn{1}{c|}{USD 60} \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} &
+  \multicolumn{1}{c|}{USD 430} \\ \hline
+\rowcolor[HTML]{C0C0C0}
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
+\rowcolor[HTML]{C0C0C0}
+Descripción &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+Traslados y logística de pruebas de campo &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 50} &
+  \multicolumn{1}{c|}{USD 50} \\ \hline
+Reposición de componentes e imprevistos &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 70} &
+  \multicolumn{1}{c|}{USD 70} \\ \hline
+Amortización de herramientas y recursos auxiliares &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 50} &
+  \multicolumn{1}{c|}{USD 50} \\ \hline
+\multicolumn{3}{|c|}{SUBTOTAL} &
+  \multicolumn{1}{c|}{USD 170} \\ \hline
+\rowcolor[HTML]{C0C0C0}
+\multicolumn{3}{|c|}{TOTAL} &
+  \multicolumn{1}{c|}{USD 600} \\ \hline
+\end{tabularx}
+\end{table}
 
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
 \begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
-\begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
+a) Identificación de los riesgos y estimación de sus consecuencias:
 
-Riesgo 2:
+Riesgo 1: demoras en la adquisición de módulos importados.
 \begin{itemize}
-	\item Severidad (S): X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (S): 8.
+	\item Probabilidad de ocurrencia (O): 6.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 2: cobertura 4G insuficiente en los entornos de prueba.
 \begin{itemize}
-	\item Severidad (S):  X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (S): 7.
+	\item Probabilidad de ocurrencia (O): 5.
 \end{itemize}
 
+Riesgo 3: autonomía del prototipo menor a la esperada.
+\begin{itemize}
+	\item Severidad (S): 8.
+	\item Probabilidad de ocurrencia (O): 5.
+\end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 4: dificultades de integración entre GPS, 4G y almacenamiento local.
+\begin{itemize}
+	\item Severidad (S): 7.
+	\item Probabilidad de ocurrencia (O): 6.
+\end{itemize}
+
+Riesgo 5: desvío en la carga horaria disponible del responsable.
+\begin{itemize}
+	\item Severidad (S): 6.
+	\item Probabilidad de ocurrencia (O): 5.
+\end{itemize}
+
+b) Tabla de gestión de riesgos:
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-\end{tabularx}%
+Demoras en adquisición de módulos importados & 8 & 6 & 48 & 8 & 3 & 24 \\ \hline
+Cobertura 4G insuficiente en pruebas & 7 & 5 & 35 & 6 & 4 & 24 \\ \hline
+Autonomía menor a la esperada & 8 & 5 & 40 & 7 & 3 & 21 \\ \hline
+Dificultades de integración entre subsistemas & 7 & 6 & 42 & 6 & 4 & 24 \\ \hline
+Desvío de carga horaria disponible & 6 & 5 & 30 & 5 & 4 & 20 \\ \hline
+\end{tabularx}
 \end{table}
 
-Criterio adoptado: 
+Criterio adoptado:
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores o iguales a 30.
 
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
-
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
- 
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  \begin{itemize}
-	\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
-	\end{itemize}
-
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-
-\end{consigna}
-
-\section{14. Sprint Review}
-\label{sec:sprint_review}
-
-La revisión de sprint (\emph{Sprint Review}) es una práctica fundamental en metodologías ágiles. Consiste en revisar y evaluar lo que se ha completado al finalizar un sprint. En esta instancia, se presentan los avances y se verifica si las funcionalidades cumplen con los criterios de aceptación establecidos. También se identifican entregables parciales y se consideran ajustes si es necesario.
-
-Aunque el proyecto aún se encuentre en etapa de planificación, esta sección permite proyectar cómo se evaluarán las funcionalidades más importantes del backlog. Esta mirada anticipada favorece la planificación enfocada en valor y permite reflexionar sobre posibles obstáculos.
-
-\textbf{Objetivo:} anticipar cómo se evaluará el avance del proyecto a medida que se desarrollen las funcionalidades, utilizando como base al menos cuatro historias de usuario del \emph{Product Backlog}.
-
-
-Seleccionar al menos 4 HU del Product Backlog. Para cada una, completar la siguiente tabla de revisión proyectada:
-
-\textbf{Formato sugerido:}
-\begin{table}[htpb]
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|>{\raggedright\arraybackslash}m{2.4cm}|
-                >{\raggedright\arraybackslash}m{2.3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|
-                >{\raggedright\arraybackslash}m{3cm}|}
-\hline
-\rowcolor[HTML]{CCCCCC}
-\textbf{HU seleccionada} & \textbf{Tareas asociadas} & \textbf{Entregable esperado} & \textbf{¿Cómo sabrás que está cumplida?} & \textbf{Observaciones o riesgos} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU1}    & Tarea 2 & \multirow{-2}{=}{Módulo funcional} & \multirow{-2}{=}{Cumple criterios de aceptación definidos} & \multirow{-2}{=}{Falta validar con el tutor} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU3}    & Tarea 2 & \multirow{-2}{=}{Reporte generado} & \multirow{-2}{=}{Exportación disponible y clara} & \multirow{-2}{=}{Requiere datos reales} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU5}    & Tarea 2 & \multirow{-2}{=}{Panel de gestión} & \multirow{-2}{=}{Roles diferenciados operativos} & \multirow{-2}{=}{Riesgo en integración} \\
-\hline
-                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
-\multirow{-2}{=}{HU7}    & Tarea 2 & \multirow{-2}{=}{Informe trimestral} & \multirow{-2}{=}{PDF con gráficos y evolución} & \multirow{-2}{=}{Puede faltar tiempo para ajustes} \\
-\hline
-\end{tabular}
-\end{table}
-
-\section{15. Sprint Retrospective}    
-\label{sec:sprint_retro}
-
-La retrospectiva de sprint es una práctica orientada a la mejora continua. Al finalizar un sprint, el equipo (o el alumno, si trabaja de forma individual) reflexiona sobre lo que funcionó bien, lo que puede mejorarse y qué acciones concretas pueden implementarse para trabajar mejor en el futuro.
-
-Durante la cursada se propuso el uso de la \textbf{Estrella de la Retrospectiva}, que organiza la reflexión en torno a cinco ejes:
+c) Plan de mitigación:
 
 \begin{itemize}
-\item  ¿Qué hacer más?
-\item  ¿Qué hacer menos?
-\item  ¿Qué mantener?
-\item  ¿Qué empezar a hacer?
-\item  ¿Qué dejar de hacer?
+	\item Para el riesgo de adquisición de módulos, se prevé seleccionar componentes con proveedores alternativos y adelantar las compras críticas.
+	\item Para el riesgo de cobertura 4G insuficiente, se realizarán pruebas tempranas en distintas zonas y se evaluará más de un operador celular.
+	\item Para el riesgo de autonomía insuficiente, se medirá el consumo por subsistema y se ajustará la estrategia de transmisión y adquisición de datos.
+	\item Para el riesgo de integración, se planificarán ensayos incrementales por módulo antes de avanzar a la integración completa.
+	\item Para el riesgo de desvío horario, se mantendrá una planificación con hitos intermedios y márgenes de contingencia.
 \end{itemize}
-
-Aun en una etapa temprana, esta herramienta permite que el alumno planifique su forma de trabajar, identifique anticipadamente posibles dificultades y diseñe estrategias de organización personal.
-
-\textbf{Objetivo:} reflexionar sobre las condiciones iniciales del proyecto, identificando fortalezas, posibles dificultades y estrategias de mejora, incluso antes del inicio del desarrollo.
+\end{consigna}
 
 
-Completar la siguiente tabla tomando como referencia los cinco ejes de la Estrella de la Retrospectiva (\emph{Starfish} o estrella de mar). Esta instancia te ayudará a definir buenas prácticas desde el inicio y prepararte para enfrentar el trabajo de forma organizada y flexible. Se deberá completar la tabla al menos para 3 sprints técnicos y 1 no técnico.
+\section{14. Gestión de la calidad}
+\label{sec:calidad}
 
-\textbf{Formato sugerido:}
+\begin{consigna}{red}
+Seleccionar los requerimientos más críticos del proyecto e indicar para cada uno las acciones de verificación y validación que permitirán asegurar su cumplimiento.
 
-\begin{table}[htpb]
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{1.8cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|
-                >{\raggedright\arraybackslash}p{2.3cm}|}
-\hline
-\rowcolor[HTML]{CCCCCC} 
-\textbf{Sprint tipo y N°} & \textbf{¿Qué hacer más?} & \textbf{¿Qué hacer menos?} & \textbf{¿Qué mantener?} & \textbf{¿Qué empezar a hacer?} & \textbf{¿Qué dejar de hacer?} \\
-\hline
-Sprint técnico - 1 & Validaciones continuas con el alumno & Cambios sin versión registrada & Pruebas con datos simulados & Documentar cambios propuestos & Ajustes sin análisis de impacto \\
-\hline
-Sprint técnico - 2 & Verificar configuraciones en múltiples escenarios & Modificar parámetros sin guardar historial & Perfiles reutilizables & Usar logs para configuración & Repetir pruebas manuales innecesarias \\
-\hline
-Sprint técnico - 8 & Comparar correlaciones con casos previos & Cambiar parámetros sin justificar & Revisión cruzada de métricas & Anotar configuraciones usadas & Trabajar sin respaldo de datos \\
-\hline
-Sprint no técnico - 12 (por ej.: ``Defensa'') & Ensayos orales con feedback & Cambiar contenidos en la memoria & Material visual claro & Dividir la presentación por bloques & Agregar gráficos difíciles de explicar \\
-\hline
-\end{tabular}
-\end{table}
+\begin{itemize}
+	\item Req \#1: el sistema debe adquirir la ubicación geográfica mediante GPS.
+	\begin{itemize}
+		\item Verificación: contrastar lecturas del módulo contra puntos de referencia conocidos.
+		\item Validación: confirmar que la precisión obtenida permite localizar a la mascota de forma práctica.
+	\end{itemize}
+	\item Req \#2: el sistema debe transmitir datos mediante red 4G y MQTT.
+	\begin{itemize}
+		\item Verificación: revisar logs de conexión, publicación y recepción en el broker.
+		\item Validación: confirmar que el usuario puede visualizar la información remotamente en el dashboard.
+	\end{itemize}
+\end{itemize}
+\end{consigna}
 
 
+\section{15. Procesos de cierre}
+\label{sec:cierre}
 
+\begin{consigna}{red}
+Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, contemplando:
+
+\begin{itemize}
+	\item Revisión del cumplimiento del plan original.
+	\item Identificación de técnicas útiles, problemas encontrados y soluciones aplicadas.
+	\item Organización del cierre formal del proyecto y agradecimiento a los interesados.
+\end{itemize}
+\end{consigna}
 
 \end{document}
