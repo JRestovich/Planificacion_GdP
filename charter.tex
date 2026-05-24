@@ -133,7 +133,7 @@ Usuario final & Dueños de mascotas & -                & Usuario del sistema    
 \end{table}
 
 \begin{itemize}
-	\item Cliente: la Ing. Renata Gorla será el cliente, comprometiendose a evaluar la propuesta de valor del proyecto y dar su feedback en las diferentes etapas del prototipo. Su principal interés es contar con una solución confiable, simple de usar y con un costo de adquisición y mantenimiento accesible.
+	\item Cliente: la Ing. Renata Gorla será el cliente, comprometiendose a evaluar la propuesta de valor del proyecto y dar su feedback en las diferentes versiones del prototipo. Su principal interés es contar con una solución confiable, simple de usar y con un costo de adquisición y mantenimiento accesible.
 	\item Responsable: Joaquin Restovich es quien define, implementa e integra los distintos componentes del prototipo, además de planificar las tareas y verificar el cumplimiento de los objetivos del proyecto.
 	\item Orientador: el Esp. Ing. Gonzalo Sanchez brindará guía técnica y metodológica para ayudar en la revisión del enfoque general, la definición de prioridades y la validación de las decisiones de diseño.
 	\item Usuario final: los dueños de mascotas utilizarán el sistema para localizar a sus animales en caso de extravío. Se espera que valoren especialmente la facilidad de uso, la autonomía del dispositivo y la disponibilidad de la información de ubicación.
@@ -211,18 +211,27 @@ Para el desarrollo del presente proyecto se supone que:
 		\item El sistema debe informar el estado general del dispositivo mediante un LED local y mediante datos visibles en un dashboard remoto.
 		\item El sistema debe permitir visualizar la última ubicación reportada, el estado de conectividad y el nivel de batería desde una interfaz accesible por navegador.
 	\end{enumerate}
+	
 	\item Requerimientos de diseño e integración:
 	\begin{enumerate}
 		\item El prototipo debe implementarse sobre una plataforma de desarrollo, sin requerir hardware dedicado en esta etapa.
 		\item El sistema debe integrar, como mínimo, los módulos GPS, 4G, batería, memoria microSD y una interfaz básica de estado.
-		\item El dispositivo debe mantener dimensiones y peso compatibles con el uso en una mascota, dentro de las limitaciones propias de un prototipo.
+		\item El dispositivo debe mantener dimensiones y peso compatibles con el uso en una mascota, procurando un peso menor a 200g y dimensaciones que no exederan los 80 x 60 x 30 mm.
 	\end{enumerate}
+	
 	\item Requerimientos de validación:
 	\begin{enumerate}
-		\item Se realizarán pruebas unitarias de los componentes [rincipales de firmware.
+		\item Se realizarán pruebas unitarias de los componentes principales de firmware.
 		\item La solución debe ser validada mediante pruebas de integración y al menos una prueba de campo.
 		\item La precisión de ubicación y la transmisión remota deben contrastarse con mediciones o referencias conocidas.
 		\item La autonomía del prototipo debe resultar suficiente para ejecutar los ensayos definidos para el proyecto.
+	\end{enumerate}
+	
+	\item Requerimientos de documentación:
+	\begin{enumerate}
+		\item El proyecto debe incluir la memoria técnica del trabajo final.
+		\item El proyecto debe contar con la documentación técnica del firmware siguiendo el formato doxygen.
+		\item El proyecto debe contar con la documentación técnica del dashboard.
 	\end{enumerate}
 \end{enumerate}
 
