@@ -438,10 +438,11 @@ El diagrama de \textit{Activity on Node} se armó a partir del WBS definido en l
 
 A continuación se muestra una tabla con las fechas de inicio y fin de cada tarea y su carga en cantidad de horas. Además, en la figura \ref{fig:diagGantt} se presenta el diagrama de Gantt del proyecto. Este cronograma resume la distribución temporal de las actividades principales, muestra las tareas del EDT y deberá mantenerse consistente con la fecha de finalización indicada en el Acta Constitutiva.
 
+\begin{table}[htpb]
+\centering
 \normalsize
 \setlength{\tabcolsep}{2pt}
 \renewcommand{\arraystretch}{0.88}
-\centering
 \begin{tabularx}{\linewidth}{@{}|C{0.8cm}|>{\raggedright\arraybackslash}X|C{1.9cm}|C{1.9cm}|C{1.6cm}|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0}
@@ -483,16 +484,18 @@ ID & Actividad & \shortstack{Fecha de\\inicio} & \shortstack{Fecha de\\fin} & Du
 35 & Ajustes finales y cierre del proyecto & 8/10/27 & 8/12/27 & 3 \\ \hline
 
 \end{tabularx}
-\captionof{table}{Actividades consideradas para el diagrama de Gantt.}
+\caption{Actividades consideradas para el diagrama de Gantt.}
 \label{tab:gantt-actividades}
-\normalsize
+\end{table}
 
 \clearpage
 \begin{landscape}
+\begin{figure}[p]
 \centering
 \includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\captionof{figure}{Diagrama de Gantt del proyecto.}
+\caption{Diagrama de Gantt del proyecto.}
 \label{fig:diagGantt}
+\end{figure}
 \end{landscape}
 
 
@@ -564,14 +567,8 @@ Amortización de herramientas y recursos auxiliares &
 \end{tabularx}
 \end{table}
 
-Hora profesional Senior: 10 CE × $20.000 ≈ $200.000 por hora
-Semi‑senior: 7,5 CE × $20.000 ≈ $150.000 por hora
-Junior: 5 CE × $20.000 ≈ $100.000 por hora
-
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
-
-a) Identificación de los riesgos y estimación de sus consecuencias:
 
 Riesgo 1: demoras en la adquisición de módulos importados.
 \begin{itemize}
