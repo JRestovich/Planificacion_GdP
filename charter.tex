@@ -597,7 +597,7 @@ Riesgo 4: dificultades de integración entre GPS, 4G y almacenamiento local.
 Riesgo 5: ensamblaje del prototipo.
 \begin{itemize}
 	\item Severidad (S): 6. Se debe lograr unir los diferentes módulos que componen el sistema de la forma mas compacta posible para que sea portable por una mascota.
-	\item Probabilidad de ocurrencia (O): 6. al no contmplar el desarrollo de hardware dedicado es posible que los primero prototipos no sean tan compacto, haciendo que sean compatibles con mascotas de medianas a grandes.
+	\item Probabilidad de ocurrencia (O): 6. al no contemplar el desarrollo de hardware dedicado es posible que los primero prototipos no sean tan compacto, haciendo que sean compatibles con mascotas de medianas a grandes.
 \end{itemize}
 
 A continuación se muestra la tabla de gestión de riesgos:
@@ -610,9 +610,9 @@ A continuación se muestra la tabla de gestión de riesgos:
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 Demoras en adquisición de módulos importados & 8 & 5 & 40 & 8 & 3 & 24 \\ \hline
 Cobertura 4G insuficiente en pruebas & 7 & 4 & 28 & 7 & 4 & 28 \\ \hline
-Autonomía menor a la esperada & 9 & 5 & 45 & 7 & ? & ? \\ \hline
+Autonomía menor a la esperada & 9 & 5 & 45 & 7 & 5 & 35 \\ \hline
 Dificultades de integración entre subsistemas & 7 & 5 & 35 & 6 & 4 & 24 \\ \hline
-Ensamblaje del prototipo & 6 & 6 & 36 & ? & ? & ? \\ \hline
+Ensamblaje del prototipo & 6 & 6 & 36 & 5 & 5 & 25 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -622,14 +622,17 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean may
 
 Se presenta el siguiente plan de mitigación para intentar reducir los riesgos:
 
-\begin{itemize}
-	\item Para el riesgo de adquisición de módulos, se prevé seleccionar componentes con proveedores alternativos y adelantar las compras críticas.
-	\item Para el riesgo de cobertura 4G insuficiente, se realizarán pruebas tempranas en distintas zonas y se evaluará más de un operador celular.
-	\item Para el riesgo de autonomía insuficiente, se medirá el consumo por subsistema y se ajustará la estrategia de transmisión y adquisición de datos.
-	\item Para el riesgo de integración, se planificarán ensayos incrementales por módulo antes de avanzar a la integración completa.
-	\item Para el riesgo de desvío horario, se mantendrá una planificación con hitos intermedios y márgenes de contingencia.
+Riesgo 3 Mitigado: autonomía del prototipo menor a la esperada.
+\begin{itemize}	
+\item Severidad (S*): 7. Se medirá el consumo por subsistema y se ajustará la estrategia de transmisión y adquisición de datos para minimizar el consumo y maximizar la autonomía del dispositivo. Se optará por módulos que sean compatibles con las pretensiones energéticas del proyecto.
+\item Probabilidad de ocurrencia (O*): 5. Se deben seleccionar con cuidado los componentes finales a utilizar.
 \end{itemize}
 
+Riesgo 5 Mitigado: ensamblaje del prototipo.
+\begin{itemize}
+\item Severidad (S*): 5. Para reducir el tamaño del protipo y asegurar la rigidez del mismo, se realizará un diseño con SolidWorks para contruir una carcasa impresa en 3D del prototipo. 
+\item Probabilidad de ocurrencia (O*): 5. Se usará asesoria externa para optimizar el diseño físico.
+\end{itemize}
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
