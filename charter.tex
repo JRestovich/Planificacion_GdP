@@ -433,15 +433,72 @@ El diagrama de \textit{Activity on Node} se armó a partir del WBS definido en l
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-En la figura \ref{fig:diagGantt} se presenta el diagrama de Gantt del proyecto. Este cronograma resume la distribución temporal de las actividades principales, muestra las tareas del EDT y deberá mantenerse consistente con la fecha de finalización indicada en el Acta Constitutiva.
+A continuación se muestra una tabla con las fechas de inicio y fin de cada tarea y su carga en cantidad de horas. Además, en la figura \ref{fig:diagGantt} se presenta el diagrama de Gantt del proyecto. Este cronograma resume la distribución temporal de las actividades principales, muestra las tareas del EDT y deberá mantenerse consistente con la fecha de finalización indicada en el Acta Constitutiva.
 
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\fontsize{6.4}{7.0}\selectfont
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{0.88}
+\begin{longtable}{|C{0.7cm}|L{6.4cm}|C{1.8cm}|C{1.8cm}|C{1.2cm}|}
+\rowcolor[HTML]{C0C0C0}
+ID & Actividad & Fecha de inicio & Fecha de fin & Duración \\ \hline
+\endfirsthead
+\hline
+\rowcolor[HTML]{C0C0C0}
+ID & Actividad & Fecha de inicio & Fecha de fin & Duración \\ \hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+1 & Planificación y definición del proyecto & 1/11/27 & 1/29/27 & 15 \\ \hline
+2 & Relevamiento del problema y del estado del arte & 1/11/27 & 1/14/27 & 4 \\ \hline
+3 & Definición de alcance, supuestos y requerimientos & 1/15/27 & 1/20/27 & 4 \\ \hline
+4 & Elaboración del backlog y criterios de aceptación & 1/21/27 & 1/25/27 & 3 \\ \hline
+5 & Planificación general del proyecto y estimación de esfuerzo & 1/26/27 & 1/29/27 & 4 \\ \hline
+6 & Selección e integración de hardware & 2/1/27 & 3/12/27 & 30 \\ \hline
+7 & Selección de plataforma de desarrollo y microcontrolador & 2/1/27 & 2/5/27 & 5 \\ \hline
+8 & Selección del módulo GPS & 2/8/27 & 2/12/27 & 5 \\ \hline
+9 & Selección del módulo 4G y plan de datos para pruebas & 2/15/27 & 2/19/27 & 5 \\ \hline
+10 & Selección de batería, sistema de carga y protecciones & 2/22/27 & 2/26/27 & 5 \\ \hline
+11 & Integración física inicial de los módulos del prototipo & 3/1/27 & 3/5/27 & 5 \\ \hline
+12 & Verificación eléctrica y funcional básica del conjunto & 3/8/27 & 3/12/27 & 5 \\ \hline
+13 & Desarrollo del firmware embebido & 3/15/27 & 5/14/27 & 45 \\ \hline
+14 & Arquitectura de software y definición de módulos & 3/15/27 & 3/24/27 & 8 \\ \hline
+15 & Desarrollo del módulo de adquisición GPS & 3/25/27 & 4/5/27 & 8 \\ \hline
+16 & Desarrollo del módulo de comunicación 4G & 4/6/27 & 4/15/27 & 8 \\ \hline
+17 & Desarrollo del módulo MQTT & 4/26/27 & 5/5/27 & 8 \\ \hline
+18 & Desarrollo del manejo de almacenamiento en microSD & 4/19/27 & 4/23/27 & 5 \\ \hline
+19 & Desarrollo del control de batería y gestión de energía & 5/5/27 & 5/11/27 & 5 \\ \hline
+20 & Desarrollo del módulo de LED de estado y diagnóstico básico & 5/12/27 & 5/14/27 & 3 \\ \hline
+21 & Desarrollo del sistema remoto y visualización & 4/13/27 & 5/14/27 & 24 \\ \hline
+22 & Selección y configuración del broker MQTT & 4/13/27 & 4/19/27 & 5 \\ \hline
+23 & Definición del formato de mensajes y tópicos & 4/20/27 & 4/23/27 & 4 \\ \hline
+24 & Diseño del dashboard de monitoreo & 4/27/27 & 5/3/27 & 5 \\ \hline
+25 & Implementación del dashboard básico & 5/4/27 & 5/14/27 & 9 \\ \hline
+26 & Validación del prototipo & 6/17/27 & 7/14/27 & 20 \\ \hline
+27 & Pruebas unitarias e integración entre módulos & 6/17/27 & 6/23/27 & 5 \\ \hline
+28 & Pruebas de conectividad celular y transmisión remota & 6/24/27 & 6/30/27 & 5 \\ \hline
+29 & Pruebas de almacenamiento local ante pérdida de conectividad & 7/1/27 & 7/7/27 & 5 \\ \hline
+30 & Pruebas de campo de geolocalización y autonomía & 7/8/27 & 7/14/27 & 5 \\ \hline
+31 & Documentación y cierre & 7/15/27 & 8/12/27 & 21 \\ \hline
+32 & Registro de resultados y análisis de ensayos & 7/15/27 & 7/21/27 & 5 \\ \hline
+33 & Redacción de la memoria técnica & 7/22/27 & 8/2/27 & 8 \\ \hline
+34 & Preparación de material de presentación y defensa & 8/3/27 & 8/9/27 & 5 \\ \hline
+35 & Ajustes finales y cierre del proyecto & 8/10/27 & 8/12/27 & 3 \\ \hline
+
+\caption[]{Actividades consideradas para el diagrama de Gantt.}
+\label{tab:gantt-actividades}
+\end{longtable}
+\normalsize
+
+\clearpage
 \begin{landscape}
-\begin{figure}[htpb]
 \centering
 \includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Diagrama de Gantt preliminar del proyecto.}
+\captionof{figure}{Diagrama de Gantt del proyecto.}
 \label{fig:diagGantt}
-\end{figure}
 \end{landscape}
 
 
