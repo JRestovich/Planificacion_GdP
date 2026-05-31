@@ -28,6 +28,8 @@
 \fechaFINALPlan{16 de junio de 2026} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{junio de 2027}	%Fecha de defensa pública del trabajo final
 
+\usepackage{xltabular}
+
 % Fuerza los nombres automáticos de figuras en español.
 \AtBeginDocument{%
   \selectlanguage{spanish}%
@@ -435,23 +437,14 @@ El diagrama de \textit{Activity on Node} se armó a partir del WBS definido en l
 
 A continuación se muestra una tabla con las fechas de inicio y fin de cada tarea y su carga en cantidad de horas. Además, en la figura \ref{fig:diagGantt} se presenta el diagrama de Gantt del proyecto. Este cronograma resume la distribución temporal de las actividades principales, muestra las tareas del EDT y deberá mantenerse consistente con la fecha de finalización indicada en el Acta Constitutiva.
 
-\setlength{\LTleft}{0pt}
-\setlength{\LTright}{0pt}
-\fontsize{6.4}{7.0}\selectfont
+\normalsize
 \setlength{\tabcolsep}{2pt}
 \renewcommand{\arraystretch}{0.88}
-\begin{longtable}{|C{0.7cm}|L{6.4cm}|C{1.8cm}|C{1.8cm}|C{1.2cm}|}
-\rowcolor[HTML]{C0C0C0}
-ID & Actividad & Fecha de inicio & Fecha de fin & Duración \\ \hline
-\endfirsthead
+\centering
+\begin{tabularx}{\linewidth}{@{}|C{0.8cm}|>{\raggedright\arraybackslash}X|C{1.9cm}|C{1.9cm}|C{1.6cm}|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0}
-ID & Actividad & Fecha de inicio & Fecha de fin & Duración \\ \hline
-\endhead
-\hline
-\endfoot
-\hline
-\endlastfoot
+ID & Actividad & \shortstack{Fecha de\\inicio} & \shortstack{Fecha de\\fin} & Duración \\ \hline
 1 & Planificación y definición del proyecto & 1/11/27 & 1/29/27 & 15 \\ \hline
 2 & Relevamiento del problema y del estado del arte & 1/11/27 & 1/14/27 & 4 \\ \hline
 3 & Definición de alcance, supuestos y requerimientos & 1/15/27 & 1/20/27 & 4 \\ \hline
@@ -488,9 +481,9 @@ ID & Actividad & Fecha de inicio & Fecha de fin & Duración \\ \hline
 34 & Preparación de material de presentación y defensa & 8/3/27 & 8/9/27 & 5 \\ \hline
 35 & Ajustes finales y cierre del proyecto & 8/10/27 & 8/12/27 & 3 \\ \hline
 
-\caption[]{Actividades consideradas para el diagrama de Gantt.}
+\end{tabularx}
+\captionof{table}{Actividades consideradas para el diagrama de Gantt.}
 \label{tab:gantt-actividades}
-\end{longtable}
 \normalsize
 
 \clearpage
