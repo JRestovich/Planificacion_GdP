@@ -570,37 +570,37 @@ Amortización de herramientas y recursos auxiliares &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-Riesgo 1: demoras en la adquisición de módulos importados.
+Riesgo 1: dificultades en la importación de módulos.
 \begin{itemize}
-	\item Severidad (S): 8.
-	\item Probabilidad de ocurrencia (O): 6.
+	\item Severidad (S): 8. No disponer de los componentes de hardware puede significar grandes demoras en el desaroolo del software, pudiendo ser un cuello de botella del desarrollo.
+	\item Probabilidad de ocurrencia (O): 4. Luego de la seleccion de componentes se empezará con tareas que no requieran los componentes para intentar evitar tiempos muertos. LLegado el caso de sufir retrasos considerables en la importación se optará por provedores locales para el protoipo.
 \end{itemize}
 
 Riesgo 2: cobertura 4G insuficiente en los entornos de prueba.
 \begin{itemize}
-	\item Severidad (S): 7.
-	\item Probabilidad de ocurrencia (O): 5.
+	\item Severidad (S): 7. Se deben analizar las zonas de cobertura de los diferentes provedores locales para asegurar que la correcta conexión del dispositivo y minimizar los posibles baches de cobertura.
+	\item Probabilidad de ocurrencia (O): 4. Hoy en día la mayoria de provedores ofrecen buena cobertura en zonas urbanas.
 \end{itemize}
 
 Riesgo 3: autonomía del prototipo menor a la esperada.
 \begin{itemize}
-	\item Severidad (S): 8.
-	\item Probabilidad de ocurrencia (O): 5.
+	\item Severidad (S): 9. El dimensionamiento de las baterías, el uso del modo de bajo consumo y la selección de módulos que consigan un correcto compromiso entre consumo y performance es clave para la viabilidad del proyecto, sin elevar significativamente los costos.
+	\item Probabilidad de ocurrencia (O): 5.Se deben seleccionar con cuidado los componentes finales a utilizar.
 \end{itemize}
 
 Riesgo 4: dificultades de integración entre GPS, 4G y almacenamiento local.
 \begin{itemize}
-	\item Severidad (S): 7.
-	\item Probabilidad de ocurrencia (O): 6.
+	\item Severidad (S): 7. Los diferentes módulso de firmware deben ser desarrollados de forma que puedan comunicarse entre ellos sin que esto represente una dificultad.
+	\item Probabilidad de ocurrencia (O): 5. Se hará es desarrollo de una forma modular, haciendo test de cada uno de las partes para comprobar su correcto funcionamiento.
 \end{itemize}
 
-Riesgo 5: desvío en la carga horaria disponible del responsable.
+Riesgo 5: ensamblaje del prototipo.
 \begin{itemize}
-	\item Severidad (S): 6.
-	\item Probabilidad de ocurrencia (O): 5.
+	\item Severidad (S): 6. Se debe lograr unir los diferentes módulos que componen el sistema de la forma mas compacta posible para que sea portable por una mascota.
+	\item Probabilidad de ocurrencia (O): 6. al no contmplar el desarrollo de hardware dedicado es posible que los primero prototipos no sean tan compacto, haciendo que sean compatibles con mascotas de medianas a grandes.
 \end{itemize}
 
-b) Tabla de gestión de riesgos:
+A continuación se muestra la tabla de gestión de riesgos:
 
 \begin{table}[htpb]
 \centering
@@ -608,19 +608,19 @@ b) Tabla de gestión de riesgos:
 \hline
 \rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-Demoras en adquisición de módulos importados & 8 & 6 & 48 & 8 & 3 & 24 \\ \hline
-Cobertura 4G insuficiente en pruebas & 7 & 5 & 35 & 6 & 4 & 24 \\ \hline
-Autonomía menor a la esperada & 8 & 5 & 40 & 7 & 3 & 21 \\ \hline
-Dificultades de integración entre subsistemas & 7 & 6 & 42 & 6 & 4 & 24 \\ \hline
-Desvío de carga horaria disponible & 6 & 5 & 30 & 5 & 4 & 20 \\ \hline
+Demoras en adquisición de módulos importados & 8 & 5 & 40 & 8 & 3 & 24 \\ \hline
+Cobertura 4G insuficiente en pruebas & 7 & 4 & 28 & 7 & 4 & 28 \\ \hline
+Autonomía menor a la esperada & 9 & 5 & 45 & 7 & ? & ? \\ \hline
+Dificultades de integración entre subsistemas & 7 & 5 & 35 & 6 & 4 & 24 \\ \hline
+Ensamblaje del prototipo & 6 & 6 & 36 & ? & ? & ? \\ \hline
 \end{tabularx}
 \end{table}
 
 Criterio adoptado:
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores o iguales a 30.
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores o iguales a 36. Se toma esta valor como referencia tomando como referencia la situación en que la severidad y la probabilidad de ocurrencia tengan ambas un valos de 6.
 
-c) Plan de mitigación:
+Se presenta el siguiente plan de mitigación para intentar reducir los riesgos:
 
 \begin{itemize}
 	\item Para el riesgo de adquisición de módulos, se prevé seleccionar componentes con proveedores alternativos y adelantar las compras críticas.
