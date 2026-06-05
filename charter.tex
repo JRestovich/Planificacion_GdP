@@ -590,8 +590,8 @@ Riesgo 3: autonomía del prototipo menor a la esperada.
 
 Riesgo 4: dificultades de integración entre GPS, 4G y almacenamiento local.
 \begin{itemize}
-	\item Severidad (S): 7. Los diferentes módulos de firmware deben ser desarrollados de forma que puedan comunicarse entre ellos sin que esto represente una dificultad.
-	\item Probabilidad de ocurrencia (O): 5. Se hará el desarrollo de una forma modular, haciendo pruebas de cada una de las partes para comprobar su correcto funcionamiento.
+	\item Severidad (S): 7. En caso de que los módulos de firmware no logren integrarse correctamente, la validación end-to-end del prototipo se vería imposibilitada
+	\item Probabilidad de ocurrencia (O): 5. Debido a que el sistema integra múltiples módulos con interfaces distintas (UART, SPI, 4G, MQTT) y el responsable tiene experiencia limitada con alguno de ellos, lo que eleva la probabilidad de problemas de compatibilidad durante la integración.
 \end{itemize}
 
 Riesgo 5: ensamblaje del prototipo.
