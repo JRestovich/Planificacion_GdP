@@ -608,7 +608,7 @@ A continuación se muestra la tabla de gestión de riesgos:
 \hline
 \rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-Demoras en adquisición de módulos importados & 8 & 5 & 40 & 8 & 3 & 24 \\ \hline
+Demoras en adquisición de módulos importados & 8 & 5 & 40 & 6 & 4 & 24 \\ \hline
 Cobertura 4G insuficiente en pruebas & 9 & 4 & 36 & 6 & 4 & 24 \\ \hline
 Autonomía menor a la esperada & 9 & 5 & 45 & 7 & 5 & 35 \\ \hline
 Dificultades de integración entre subsistemas & 7 & 5 & 35 & 6 & 4 & 24 \\ \hline
@@ -622,6 +622,12 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean may
 
 Se presenta el siguiente plan de mitigación para intentar reducir los riesgos:
 
+Riesgo 1 mitigado: dificultades en la importación de módulos.
+\begin{itemize}
+	\item Severidad (S*): 6. Se evaluarán posibles povedores locales como alternativa en caso de que no se puedan realizar compras internacionales y se analizará el posible impacto en los costos.
+	\item Probabilidad de ocurrencia (O*): 4. Luego de la selección de componentes se empezará con tareas que no requieran los componentes para intentar evitar tiempos muertos. Llegado el caso de sufrir retrasos considerables en la importación, se optará por proveedores locales para el prototipo.
+\end{itemize}
+
 Riesgo 2 mitigado: cobertura 4G insuficiente en los entornos de prueba.
 \begin{itemize}
 	\item Severidad (S*): 6.  Se analizarán las zonas de cobertura de los diferentes proveedores locales para asegurar la correcta conexión del dispositivo y minimizar los posibles baches de cobertura.	
@@ -630,14 +636,14 @@ Riesgo 2 mitigado: cobertura 4G insuficiente en los entornos de prueba.
 
 Riesgo 3 mitigado: autonomía del prototipo menor a la esperada.
 \begin{itemize}	
-\item Severidad (S*): 7. Se medirá el consumo por subsistema y se ajustará la estrategia de transmisión y adquisición de datos para minimizar el consumo y maximizar la autonomía del dispositivo. Se optará por módulos que sean compatibles con las pretensiones energéticas del proyecto.
-\item Probabilidad de ocurrencia (O*): 5. Se deben seleccionar con cuidado los componentes finales a utilizar.
+	\item Severidad (S*): 7. Se medirá el consumo por subsistema y se ajustará la estrategia de transmisión y adquisición de datos para minimizar el consumo y maximizar la autonomía del dispositivo. Se optará por módulos que sean compatibles con las pretensiones energéticas del proyecto.
+	\item Probabilidad de ocurrencia (O*): 5. Se deben seleccionar con cuidado los componentes finales a utilizar.
 \end{itemize}
 
 Riesgo 5 mitigado: ensamblaje del prototipo.
 \begin{itemize}
-\item Severidad (S*): 5. Para reducir el tamaño del prototipo y asegurar la rigidez del mismo, se realizará un diseño con SolidWorks para construir una carcasa impresa en 3D del prototipo. 
-\item Probabilidad de ocurrencia (O*): 5. Se usará asesoría externa para optimizar el diseño físico.
+	\item Severidad (S*): 5. Para reducir el tamaño del prototipo y asegurar la rigidez del mismo, se realizará un diseño con SolidWorks para construir una carcasa impresa en 3D del prototipo. 
+	\item Probabilidad de ocurrencia (O*): 5. Se usará asesoría externa para optimizar el diseño físico.
 \end{itemize}
 
 \section{14. Gestión de la calidad}
