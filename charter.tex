@@ -578,7 +578,7 @@ Riesgo 1: dificultades en la importación de módulos.
 
 Riesgo 2: cobertura 4G insuficiente en los entornos de prueba.
 \begin{itemize}
-	\item Severidad (S): 7. Se deben analizar las zonas de cobertura de los diferentes proveedores locales para asegurar la correcta conexión del dispositivo y minimizar los posibles baches de cobertura.
+	\item Severidad (S): 9.  En caso de que la cobertura 4G sea insuficiente en las zonas de prueba, no será posible validar la transmisión remota, comprometiendo los requerimientos funcionales 1.2 y 1.3 y la prueba de campo del prototipo.	
 	\item Probabilidad de ocurrencia (O): 4. Hoy en día la mayoría de los proveedores ofrecen buena cobertura en zonas urbanas.
 \end{itemize}
 
@@ -609,7 +609,7 @@ A continuación se muestra la tabla de gestión de riesgos:
 \rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 Demoras en adquisición de módulos importados & 8 & 5 & 40 & 8 & 3 & 24 \\ \hline
-Cobertura 4G insuficiente en pruebas & 7 & 4 & 28 & 7 & 4 & 28 \\ \hline
+Cobertura 4G insuficiente en pruebas & 9 & 4 & 36 & 6 & 4 & 24 \\ \hline
 Autonomía menor a la esperada & 9 & 5 & 45 & 7 & 5 & 35 \\ \hline
 Dificultades de integración entre subsistemas & 7 & 5 & 35 & 6 & 4 & 24 \\ \hline
 Ensamblaje del prototipo & 6 & 6 & 36 & 5 & 5 & 25 \\ \hline
@@ -621,6 +621,12 @@ Criterio adoptado:
 Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores o iguales a 36. Se toma este valor como referencia considerando la situación en que la severidad y la probabilidad de ocurrencia tengan ambas un valor de 6.
 
 Se presenta el siguiente plan de mitigación para intentar reducir los riesgos:
+
+Riesgo 2 mitigado: cobertura 4G insuficiente en los entornos de prueba.
+\begin{itemize}
+	\item Severidad (S*): 6.  Se analizarán las zonas de cobertura de los diferentes proveedores locales para asegurar la correcta conexión del dispositivo y minimizar los posibles baches de cobertura.	
+	\item Probabilidad de ocurrencia (O*): 4. Hoy en día la mayoría de los proveedores ofrecen buena cobertura en zonas urbanas.
+\end{itemize}
 
 Riesgo 3 Mitigado: autonomía del prototipo menor a la esperada.
 \begin{itemize}	
